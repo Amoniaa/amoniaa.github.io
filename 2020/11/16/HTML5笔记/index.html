@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>HTML5笔记 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="一、HTML5的基本元素1. &lt;meta&gt; 元素属性  charset: HTML编码方式 http-equiv:  refresh: 设定几秒后重新读取页面，或重定向至另一个页面  12&lt;meta http-equiv&#x3D;&quot;refresh&quot; content&#x3D;&quot;5&quot;&gt; &lt;!--5秒后重新加载页面--&gt;&lt;meta htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5笔记">
+<meta property="og:url" content="http://example.com/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="一、HTML5的基本元素1. &lt;meta&gt; 元素属性  charset: HTML编码方式 http-equiv:  refresh: 设定几秒后重新读取页面，或重定向至另一个页面  12&lt;meta http-equiv&#x3D;&quot;refresh&quot; content&#x3D;&quot;5&quot;&gt; &lt;!--5秒后重新加载页面--&gt;&lt;meta htt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2020-11-16T11:19:17.497Z">
+<meta property="article:modified_time" content="2020-11-16T11:22:16.577Z">
+<meta property="article:author" content="Amoniaa">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">HTML5笔记</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2020-11-16
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~7.59K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2><span id="一-html5的基本元素">一、HTML5的基本元素</span></h2><h3><span id="1-ltmetagt-元素">1. <code>&lt;meta&gt;</code> 元素</span></h3><p>属性</p>
+<ul>
+<li><strong>charset:</strong> HTML编码方式</li>
+<li><strong>http-equiv:</strong>  refresh: 设定几秒后重新读取页面，或重定向至另一个页面</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;refresh&quot;</span> <span class="attr">content</span>=<span class="string">&quot;5&quot;</span>&gt;</span> <span class="comment">&lt;!--5秒后重新加载页面--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;refresh&quot;</span> <span class="attr">content</span>=<span class="string">&quot;5;url&quot;</span>&gt;</span> <span class="comment">&lt;!--5秒后重定向至url--&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="2-ltpregt-元素">2. <code>&lt;pre&gt;</code> 元素</span></h3><p>其内容与编辑html文件所看到的格式相同，即可以保留原始文件样式</p>
+<h3><span id="3-ltsectiongt-元素">3. <code>&lt;section&gt;</code> 元素</span></h3><p>用于在文件中标记某一区域，是html的区块级元素，这种层级元素内的标题会被降一级输出，如h1-&gt;h2</p>
+<h3><span id="4-引用-ltcitegtltqgtltblockquotegt-元素">4.  引用 <code>&lt;cite&gt;</code>/<code>&lt;q&gt;</code>/<code>&lt;blockquote&gt;</code> 元素</span></h3><ul>
+<li><code>&lt;cite&gt;</code>: 内容以斜体方式显示，用于引用源标题</li>
+<li><code>&lt;q&gt;</code>: 内容前后自动加上引号，用于引用短篇文章或段落元素</li>
+<li><code>&lt;blockquote&gt;</code>: 内容有缩排效果，用于引用长篇文章<h3><span id="5-底纹-ltmarkgt-元素">5.  底纹 <code>&lt;mark&gt;</code> 元素</span></h3>内容会高亮显示<h3><span id="6-小型字-ltsmallgt-元素">6.  小型字 <code>&lt;small&gt;</code> 元素</span></h3>用于批注信息，如脚注，尾注等<h3><span id="7-ltkbdgtltsampgtltvargtltcodegt-元素">7.  <code>&lt;kbd&gt;</code>/<code>&lt;samp&gt;</code>/<code>&lt;var&gt;</code>/<code>&lt;code&gt;</code> 元素</span></h3></li>
+<li><code>&lt;kbd&gt;</code>: 用于显示键盘或语音输入的内容</li>
+<li><code>&lt;samp&gt;</code>: 用于显示计算机程序结果</li>
+<li><code>&lt;var&gt;</code>: 用于显示变量</li>
+<li><code>&lt;code&gt;</code>: 用于显示代码<h3><span id="8-ltabbrgt-元素">8.  <code>&lt;abbr&gt;</code> 元素</span></h3>用于定义缩写<h3><span id="9-ltdfngt-元素">9.  <code>&lt;dfn&gt;</code> 元素</span></h3>用于定义用语，结果以斜体输出<h3><span id="8-ltsupgtltsubgt-元素">8.  <code>&lt;sup&gt;</code>/<code>&lt;sub&gt;</code> 元素</span></h3></li>
+<li><code>&lt;sup&gt;</code>: 上标元素</li>
+<li><code>&lt;sub&gt;</code>: 下标元素<h3><span id="9-常用特殊元素">9.  常用特殊元素</span></h3><table>
+<thead>
+<tr>
+<th>描述</th>
+<th>实体名称</th>
+<th>编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格</td>
+<td><code>&amp;nbsp;</code></td>
+<td><code>&amp;#160;</code></td>
+</tr>
+<tr>
+<td>小于</td>
+<td><code>&amp;lt;</code></td>
+<td><code>&amp;#60;</code></td>
+</tr>
+<tr>
+<td>大于</td>
+<td><code>&amp;gt;</code></td>
+<td><code>&amp;#62;</code></td>
+</tr>
+<tr>
+<td>引号</td>
+<td><code>&amp;quot;</code></td>
+<td><code>&amp;#34;</code></td>
+</tr>
+<tr>
+<td>和号</td>
+<td><code>&amp;amp;</code></td>
+<td><code>&amp;#38;</code></td>
+</tr>
+</tbody></table>
+<h3><span id="10-ltagt-元素">10.  <code>&lt;a&gt;</code> 元素</span></h3>属性</li>
+<li><strong>download</strong>: 指定下载链接</li>
+<li><strong>target</strong>: 规定在何处打开目标 URL。仅在 href 属性存在时使用。<br>_blank：新窗口打开。<br>_parent：在父窗口中打开链接。<br>_self：默认，当前页面跳转。<br>_top：在当前窗体打开链接，并替换当前的整个窗体(框架页)。</li>
+</ul>
+<p><strong>同一个html中的超链接：</strong></p>
+<p>书签：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#mybookmark&quot;</span>&gt;</span>书签<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">&quot;mybookmark&quot;</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>返回顶部：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;top&quot;</span>&gt;</span>页面顶部<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#top&quot;</span>&gt;</span>返回顶部<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>指定基准url：</strong></p>
+<p>使用<code>&lt;base&gt;</code>元素可指定url的基准，此后其他相对的url皆以此url为基准</p>
+<p><code>&lt;base&gt;</code>元素位于<code>&lt;head&gt;</code>元素内，且一个<code>&lt;head&gt;</code>元素只能有一个<code>&lt;base&gt;</code>元素</p>
+<h2><span id="二-html5项目列表">二、HTML5项目列表</span></h2><h3><span id="1-无编号项目列表-ltulgt-元素">1.  无编号项目列表 <code>&lt;ul&gt;</code> 元素</span></h3><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--或--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="2-有编号项目列表-ltolgt-元素">2.  有编号项目列表 <code>&lt;ol&gt;</code> 元素</span></h3><p>1 语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--或--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2 设置起始编号为n：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">start</span>=<span class="string">&quot;n&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>3 在一组连续编号中指定某一项为n：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">value</span>=<span class="string">&quot;n&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>4 更改项目编号种类（n可以取以下值）：</p>
+<ul>
+<li>a: 编号是：a,b,c,…</li>
+<li>A: 编号是：A,B,C,…</li>
+<li>i: 编号是：i,ii,iii,…</li>
+<li>I: 编号是：I,II,III,…</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">&quot;n&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>5 设置编号递减：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">reserved</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-自定义列表-ltdlgt-元素">3.  自定义列表 <code>&lt;dl&gt;</code> 元素</span></h3><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span> key <span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span> value <span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span> key <span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span> value <span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2><span id="三-html5表格">三、HTML5表格</span></h2><h3><span id="1-表格基本元素">1.  表格基本元素</span></h3><ul>
+<li><code>&lt;table&gt;</code>: 表格本体标记</li>
+<li><code>&lt;tr&gt;</code>: 行</li>
+<li><code>&lt;td&gt;</code>: 单元格</li>
+<li><code>&lt;th&gt;</code>: 表头</li>
+<li><code>&lt;tbody&gt;</code>: 表格本体</li>
+<li><code>&lt;tfoot&gt;</code>: 表尾</li>
+<li><code>&lt;caption&gt;</code>: 标题<h3><span id="2-lttdgt-属性">2.  <code>&lt;td&gt;</code> 属性</span></h3></li>
+<li><strong>colspan</strong>: 合并横向单元格</li>
+<li><strong>rowspan</strong>: 合并纵向单元格<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;n&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">&quot;n&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="comment">&lt;!--n为合并单元格的个数--&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-单元格列群组化-ltcolgroupgtltcolgt-元素">3.  单元格列群组化 <code>&lt;colgroup&gt;</code>/<code>&lt;col&gt;</code> 元素</span></h3></li>
+<li><strong>colgroup</strong>: 用于将单元格群组化</li>
+<li><strong>col</strong>: colgroup的子元素，用于定义colgroup每一列的属性<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">colgroup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">col</span> <span class="attr">span</span>=<span class="string">&quot;n&quot;</span>&gt;</span> <span class="comment">&lt;!--n为定义的列数，默认为1--&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2><span id="四-html5图片">四、HTML5图片</span></h2><h3><span id="1-ltimggt-元素">1.  <code>&lt;img&gt;</code> 元素</span></h3><code>&lt;img&gt;</code> 标签定义 HTML 页面中的图像。</li>
+</ul>
+<p><code>&lt;img&gt;</code> 标签有两个必需的属性：src 和 alt。</p>
+<p>注释：从技术上讲，图像并不会插入 HTML 页面中，而是链接到 HTML 页面上。<code>&lt;img&gt;</code> 标签的作用是为被引用的图像创建占位符。</p>
+<p>提示：通过在 <code>&lt;a&gt;</code> 标签中嵌套 <code>&lt;img&gt;</code> 标签，给图像添加到另一个文档的链接。</p>
+<h3><span id="2-标示文件标题-ltfiguregtltfigcaptiongt-元素">2.  标示文件标题 <code>&lt;figure&gt;</code>/<code>&lt;figcaption&gt;</code> 元素</span></h3><p>用于标示图片标题</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;url&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片加载失败&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>图片标题<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-响应图-ltmapgt-元素">3.  响应图 <code>&lt;map&gt;</code> 元素</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>点击太阳或其他行星，注意变化：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;planets.gif&quot;</span> <span class="attr">width</span>=<span class="string">&quot;145&quot;</span> <span class="attr">height</span>=<span class="string">&quot;126&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Planets&quot;</span> <span class="attr">usemap</span>=<span class="string">&quot;#planetmap&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">name</span>=<span class="string">&quot;planetmap&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">area</span> <span class="attr">shape</span>=<span class="string">&quot;rect&quot;</span> <span class="attr">coords</span>=<span class="string">&quot;0,0,82,126&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Sun&quot;</span> <span class="attr">href</span>=<span class="string">&quot;sun.htm&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">area</span> <span class="attr">shape</span>=<span class="string">&quot;circle&quot;</span> <span class="attr">coords</span>=<span class="string">&quot;90,58,3&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Mercury&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mercur.htm&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">area</span> <span class="attr">shape</span>=<span class="string">&quot;circle&quot;</span> <span class="attr">coords</span>=<span class="string">&quot;124,58,8&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Venus&quot;</span> <span class="attr">href</span>=<span class="string">&quot;venus.htm&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2><span id="五-html5多媒体元素">五、HTML5多媒体元素</span></h2><h3><span id="1-视频-ltvideogt-元素">1.  视频 <code>&lt;video&gt;</code> 元素</span></h3><p>目前，<code>&lt;video&gt;</code> 元素支持三种视频格式：MP4、WebM、Ogg</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102212415516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-音频-ltaudiogt-元素">2.  音频 <code>&lt;audio&gt;</code> 元素</span></h3><p>目前，<code>&lt;audio&gt;</code> 元素支持的3种文件格式：MP3、Wav、Ogg</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/2020110221250886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="3-指定多个播放文件-ltsourcegt-元素">3.  指定多个播放文件 <code>&lt;source&gt;</code> 元素</span></h3><p><code>&lt;source&gt;</code> 标签为媒体元素（比如 <code>&lt;video&gt;</code> 和 <code>&lt;audio&gt;</code>）定义媒体资源。</p>
+<p><code>&lt;source&gt;</code> 标签允许您规定两个视频/音频文件共浏览器根据它对媒体类型或者编解码器的支持进行选择。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102212607183.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="4-嵌入资源文件-ltembedgt-元素">4.  嵌入资源文件 <code>&lt;embed&gt;</code> 元素</span></h3><p><code>&lt;embed&gt;</code> 标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）。</p>
+<blockquote>
+<p>注意：现在已经不建议使用 <code>&lt;embed&gt;</code> 标签了，可以使用 <code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code>、<code>&lt;video&gt;</code>、<code>&lt;audio&gt;</code> 等标签代替。</p>
+</blockquote>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102212733192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="5-嵌入对象-ltobjectgt-元素">5.  嵌入对象 <code>&lt;object&gt;</code> 元素</span></h3><p><code>&lt;object&gt;</code> 标签用于包含对象，比如图像、音频、视频、Java applets、ActiveX、PDF 以及 Flash。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102212930990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="6-设定嵌入对象参数-ltparamgt-元素">6.  设定嵌入对象参数 <code>&lt;param&gt;</code> 元素</span></h3><p><code>&lt;param&gt;</code>元素允许您为插入 XHTML 文档的对象规定 run-time 设置，也就是说，此标签可为包含它的 <code>&lt;object&gt;</code> 或者 <code>&lt;applet&gt;</code> 标签提供参数。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102213014560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="7-嵌入浮动框架-ltiframegt-元素">7.  嵌入浮动框架 <code>&lt;iframe&gt;</code> 元素</span></h3><p><code>&lt;iframe&gt;</code> 标签规定一个内联框架。</p>
+<p>一个内联框架被用来在当前 HTML 文档中嵌入另一个文档。</p>
+<p>提示：</p>
+<blockquote>
+<p>1.可以把需要的文本放置在 <code>&lt;iframe&gt;</code> 和 <code>&lt;/iframe&gt;</code> 之间，这样就可以应对不支持 <code>&lt;iframe&gt;</code> 的浏览器。</p>
+<p>2.可以使用 CSS 为 <code>&lt;iframe&gt;</code> （包括滚动条）定义样式。</p>
+</blockquote>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102213202773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2><span id="六-html5表单交互">六、HTML5表单交互</span></h2><h3><span id="1-ltformgt-元素">1.  <code>&lt;form&gt;</code> 元素</span></h3><p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;表单处理程序的url&quot;</span> <span class="attr">method</span>=<span class="string">&quot;数据传送方式&quot;</span> 其他属性&gt;</span> ...  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102214828347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-ltinputgt-元素">2.  <code>&lt;input&gt;</code> 元素</span></h3><p>输入字段可通过多种方式改变，取决于 type 属性。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/2020110221520215.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102215238241.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102215300180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="3-lttextareagt-元素">3.  <code>&lt;textarea&gt;</code> 元素</span></h3><p><code>&lt;textarea&gt;</code> 标签定义一个多行的文本输入控件。</p>
+<p>文本区域中可容纳无限数量的文本，其中的文本的默认字体是等宽字体（通常是 Courier）。</p>
+<p>可以通过 cols 和 rows 属性来规定 textarea 的尺寸大小，不过更好的办法是使用 CSS 的 height 和 width 属性。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102221116829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="4-关联标记-ltlabelgt-元素">4.  关联标记 <code>&lt;label&gt;</code> 元素</span></h3><p>label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。即当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。</p>
+<p><code>&lt;label&gt;</code> 标签的 for 属性应当与相关元素的 id 属性相同。</p>
+<p>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;被关联组件的id&quot;</span>&gt;</span> ...  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102221350371.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="5-进度条-ltprogressgt-元素">5.  进度条 <code>&lt;progress&gt;</code> 元素</span></h3><p><code>&lt;progress&gt;</code> 标签定义运行中的任务进度（进程）</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102221500315.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="6-仪表值-ltmetergt-元素">6.  仪表值 <code>&lt;meter&gt;</code> 元素</span></h3><p><code>&lt;meter&gt;</code> 标签定义度量衡。仅用于已知最大和最小值的度量。</p>
+<p>比如：磁盘使用情况，查询结果的相关性等。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102221605702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="7-下拉框-ltselectgtltoptiongtltoptgroupgt-元素">7.  下拉框 <code>&lt;select&gt;</code>/<code>&lt;option&gt;</code>/<code>&lt;optgroup&gt;</code> 元素</span></h3><p><code>&lt;select&gt;</code> 元素用来创建下拉列表。</p>
+<p><code>&lt;select&gt;</code> 元素中的 <code>&lt;option&gt;</code> 标签定义了列表中的可用选项。</p>
+<p><code>&lt;select&gt;</code> 属性<br><img src="https://img-blog.csdnimg.cn/20201102221858565.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><code>&lt;option&gt;</code> 属性<br><img src="https://img-blog.csdnimg.cn/20201102222047304.png#pic_center" alt="在这里插入图片描述"><br><code>&lt;optgroup&gt;</code> 标签经常用于把相关的选项组合在一起。</p>
+<p>如果你有很多的选项组合, 你可以使用<code>&lt;optgroup&gt;</code> 标签能够很简单的将相关选项组合在一起。</p>
+<p><code>&lt;optgroup&gt;</code> 属性<br><img src="https://img-blog.csdnimg.cn/20201102222241267.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="8-文本框候补选项-ltdatalistgtltoptiongt-元素">8.  文本框候补选项 <code>&lt;datalist&gt;</code>/<code>&lt;option&gt;</code>  元素</span></h3><p><code>&lt;datalist&gt;</code> 标签规定了 <code>&lt;input&gt;</code> 元素可能的选项列表。</p>
+<p><code>&lt;datalist&gt;</code> 标签被用来在为 <code>&lt;input&gt;</code> 元素提供”自动完成”的特性。用户能看到一个下拉列表，里边的选项是预先定义好的，将作为用户的输入数据。</p>
+<p>请使用 <code>&lt;input&gt;</code> 元素的 list 属性来绑定 <code>&lt;datalist&gt;</code> 元素。</p>
+<p>属性</p>
+<p><strong>id</strong>: 其内容应该和input元素的list属性值相同，以此建立关联。</p>
+<h3><span id="9-表单组件群组化-ltfieldsetgtltlegendgt-元素">9.  表单组件群组化 <code>&lt;fieldset&gt;</code>/<code>&lt;legend&gt;</code>  元素</span></h3><p><code>&lt;fieldset&gt;</code> 标签可以将表单内的相关元素分组。</p>
+<p><code>&lt;fieldset&gt;</code> 标签会在相关表单元素周围绘制边框。</p>
+<p><code>&lt;legend&gt;</code> 元素为 <code>&lt;fieldset&gt;</code>元素定义标题。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102222610807.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="10-加密密钥-ltkeygengt-元素">10.  加密密钥 <code>&lt;keygen&gt;</code> 元素</span></h3><p><code>&lt;keygen&gt;</code> 标签规定用于表单的密钥对生成器字段。</p>
+<p>当提交表单时，私钥存储在本地，公钥发送到服务器。</p>
+<p>属性<br><img src="https://img-blog.csdnimg.cn/20201102222747578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2><span id="七-html5功能总结">七、HTML5功能总结</span></h2><h3><span id="1-全局属性">1.  全局属性</span></h3><p><img src="https://img-blog.csdnimg.cn/20201102223254929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-事件属性">2.  事件属性</span></h3><p><img src="https://img-blog.csdnimg.cn/20201102223618319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020110222364916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102223714606.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102223733414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102223801253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201102223822660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="3-ltscriptgt-元素">3.  <code>&lt;script&gt;</code> 元素</span></h3><p><code>&lt;script&gt;</code> 标签用于定义客户端脚本，比如 JavaScript。</p>
+<p><code>&lt;script&gt;</code> 元素既可包含脚本语句，也可以通过 “src” 属性指向外部脚本文件。</p>
+<p>JavaScript 通常用于图像操作、表单验证以及动态内容更改。</p>
+<h3><span id="4-一般区块ltdivgt-元素">4.  一般区块<code>&lt;div&gt;</code> 元素</span></h3><p><code>&lt;div&gt;</code> 标签定义 HTML 文档中的一个分隔区块或者一个区域部分。</p>
+<p><code>&lt;div&gt;</code> 标签常用于组合块级元素，以便通过 CSS 来对这些元素进行格式化。</p>
+<h3><span id="5-一般范围ltspangt-元素">5.  一般范围<code>&lt;span&gt;</code> 元素</span></h3><p><code>&lt;span&gt;</code> 用于对文档中的行内元素进行组合。</p>
+<p><code>&lt;span&gt;</code> 标签没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化。如果不对 <code>&lt;span&gt;</code> 应用样式，那么 <code>&lt;span&gt;</code> 元素中的文本与其他文本不会任何视觉上的差异。</p>
+<p><code>&lt;span&gt;</code> 标签提供了一种将文本的一部分或者文档的一部分独立出来的方式。</p>
+<h3><span id="6-区块层级与行内层级">6.  区块层级与行内层级</span></h3><ul>
+<li>**区块层级(block)**：在新的一行放置，常见元素：<code>&lt;div&gt;</code> <code>&lt;hn&gt;</code> <code>&lt;p&gt;</code> <code>&lt;pre&gt;</code></li>
+<li>**行内层级(inline)**：在同一行放置，常见元素：<code>&lt;a&gt;</code> <code>&lt;img&gt;</code> <code>&lt;span&gt;</code><h3><span id="7-网页布局">7.  网页布局</span></h3>实例：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">header</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">nav</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">section</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">article</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">aside</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">footer</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/";
+            const title         = "「HTML5笔记」";
+            const excerpt       = `一、HTML5的基本元素1. &lt;meta&gt; 元素属性
+
+charset: HTML编码方式
+http-equiv:  refresh: 设定几秒后重新读取页面，或重定向至另一个页面
+
+12&lt;meta http-equ...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2020-11-16</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" CSS3笔记(4)——鼠标指针形状+响应式网页设计" href="/2020/11/16/CSS3笔记(4)——鼠标指针形状+响应式网页设计/">&lt; 上一篇</a>
+                </div>
+                
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> HTML5笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(4)%E2%80%94%E2%80%94%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88%E5%BD%A2%E7%8A%B6+%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/"><i class="fa  fa-book"></i> CSS3笔记(4)——鼠标指针形状+响应式网页设计</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(3)%E2%80%94%E2%80%94%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C+%E5%8A%A8%E7%94%BB+%E5%8F%98%E5%BD%A2/"><i class="fa  fa-book"></i> CSS3笔记(3)——过渡效果+动画+变形</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(2)%E2%80%94%E2%80%94%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B+%E5%A4%9A%E6%A0%8F+%E5%AE%9A%E4%BD%8D+%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8/"><i class="fa  fa-book"></i> CSS3笔记(2)——盒子模型+多栏+定位+弹性容器</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/"><i class="fa  fa-book"></i> CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2020 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>

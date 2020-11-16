@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="一、CSS3基础1. CSS3基本语法1234567891011selector &amp;#123; property1:value1; proterty2:value2; &amp;#125;&#x2F;*或*&#x2F;selector &amp;#123; 	property1:value1; 	proterty2:value2;&amp;#125;&#x2F;*多个选择器使用相同的声明区块*&#x2F;selector1, selector2 &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变">
+<meta property="og:url" content="http://example.com/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="一、CSS3基础1. CSS3基本语法1234567891011selector &amp;#123; property1:value1; proterty2:value2; &amp;#125;&#x2F;*或*&#x2F;selector &amp;#123; 	property1:value1; 	proterty2:value2;&amp;#125;&#x2F;*多个选择器使用相同的声明区块*&#x2F;selector1, selector2 &amp;#123;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2020-11-16T11:19:03.695Z">
+<meta property="article:modified_time" content="2020-11-16T11:20:12.469Z">
+<meta property="article:author" content="Amoniaa">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2020-11-16
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~8.03K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2><span id="一-css3基础">一、CSS3基础</span></h2><h3><span id="1-css3基本语法">1. CSS3基本语法</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">selector &#123; property1:value1; proterty2:value2; &#125;</span><br><span class="line"><span class="comment">/*或*/</span></span><br><span class="line"><span class="selector-tag">selector</span> &#123; </span><br><span class="line">	property1:value1; </span><br><span class="line">	<span class="selector-tag">proterty2</span><span class="selector-pseudo">:value2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*多个选择器使用相同的声明区块*/</span></span><br><span class="line"><span class="selector-tag">selector1</span>, <span class="selector-tag">selector2</span> &#123; </span><br><span class="line">	property1:value1; </span><br><span class="line">	<span class="selector-tag">proterty2</span><span class="selector-pseudo">:value2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3><span id="2-css引入方式">2. CSS引入方式</span></h3><ol>
+<li>行内样式<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="tag"><span class="string">     width:100px;</span></span></span><br><span class="line"><span class="tag"><span class="string">     height:100px;</span></span></span><br><span class="line"><span class="tag"><span class="string">     background-color: red;</span></span></span><br><span class="line"><span class="tag"><span class="string">&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>内部样式表</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line">        div&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">            background-color: greenyellow;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>外部样式表</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;test.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    	<span class="keyword">@import</span> url(test.css);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-字体">3. 字体</span></h3><p>属性：</p>
+<ul>
+<li><code>font-family</code>: 设置字体名称，可指定多个字体名称，用逗号隔开，在前面的字体名称优先级高</li>
+<li><code>font-size</code>: 设置字号大小 <strong>（1em = 16px）</strong></li>
+<li><code>font-style</code>: 设置三种字体样式：<strong>normal</strong>（正常）<strong>italic</strong>（斜体）<strong>oblique</strong>（倾斜体）</li>
+<li><code>font-variant</code>: 默认值为<strong>normal</strong>，值为<strong>small-caps</strong>时小写英文字母以小型大写字母显示</li>
+<li><code>font-weight</code>: 设置字体粗细。有以下取值：<strong>normal(400)**、</strong>bold(700)<strong>、</strong>bolder<strong>、</strong>lighter<strong>、</strong>100, 200, … , 800, 900**</li>
+<li><code>font-size-adjust</code>: 设置字体宽高比</li>
+<li> <code>font</code>: 依序设定属性值：<strong>style variant weight size family</strong>（省略某一项则使用默认值）</li>
+<li><code>@font-face</code>: 提供服务器端字体供浏览器下载<h3><span id="4-属性选择器">4. 属性选择器</span></h3>用于将具有某种属性，不论其为何值的所有元素套用该样式。</li>
+</ul>
+<p>语法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*所有属性有classname字段的元素，不论classname值为何，均套用该样式，其中*可省略*/</span></span><br><span class="line">*<span class="selector-attr">[classname]</span> &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*为所有属性有classname字段值为value的元素套用该样式*/</span></span><br><span class="line">*<span class="selector-attr">[classname=<span class="string">&quot;value&quot;</span>]</span> &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="5-虚拟选择器">5. 虚拟选择器</span></h3><p>1.链接虚拟类别 <code>:link</code> 和 <code>:visited</code></p>
+<ul>
+<li><code>:link</code>: 尚未被单击时可以套用该样式</li>
+<li><code>:visited</code>: 已被单击时可以套用该样式</li>
+</ul>
+<p>2.动作虚拟类别 <code>:hover</code> <code>:active</code> 和 <code>:focus</code></p>
+<ul>
+<li><code>:hover</code>: 鼠标指针位于超链接字符或在此元素上时可以套用该样式</li>
+<li><code>:active</code>: 单击时可以套用该样式</li>
+<li><code>:focus</code>: 获得焦点时可以套用该样式</li>
+</ul>
+<p>3.目的虚拟类别 <code>:target</code></p>
+<ul>
+<li><code>:target</code>: 为移动的目标套用该样式<h2><span id="二-段落文字编排">二、段落文字编排</span></h2><h3><span id="1-对齐方式-text-align-属性">1. 对齐方式 <code>text-align</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align: left | right | center | justify | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>left</code>: 靠左对齐</li>
+<li><code>right</code>: 靠右对齐</li>
+<li><code>center</code>: 居中对齐</li>
+<li><code>justify</code>: 左右（两端）对齐</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="2-首行缩排-text-indent-属性">2. 首行缩排 <code>text-indent</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-indent: length | % | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>length</code>: 使用cm、px、pt、em等单位设定固定长度，默认值为0</li>
+<li><code>%</code>: 缩排父元素宽度的百分比</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="3-行高-line-height-属性">3. 行高 <code>line-height</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height: normal | number | length | % | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>normal</code>: 默认值</li>
+<li><code>number</code>: 设置数值，将与当前字体尺寸相乘的结果作为行高值</li>
+<li><code>length</code>:  使用cm、px、pt等单位设定固定长度</li>
+<li><code>%</code>: 设置依照当前字体尺寸的百分比</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="4-字符间距-letter-spacing-属性">4. 字符间距 <code>letter-spacing</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">letter-spacing: normal | length | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>normal</code>: 默认值，没有额外空间</li>
+<li><code>length</code>: 设值固定的字符间距，可以为负值</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="5-文字间距-word-spacing-属性">5. 文字间距 <code>word-spacing</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">word-spacing: normal | length | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>normal</code>: 默认值，文字间距为 0.25em（4px)</li>
+<li><code>length</code>: 设值额外文字的间距，可以为负值</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="6-处理空格-white-space-属性">6. 处理空格 <code>white-space</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">white-space: normal | nowrap | pre | pre-line | pre-wrap | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>normal</code>: 默认值，浏览器会忽略空白</li>
+<li><code>nowrap</code>: 文本不换行，直到遇到 <code>&lt;br&gt;</code> 元素</li>
+<li><code>pre</code>: 保留空白，类似于html的 <code>&lt;pre&gt;</code> 元素</li>
+<li><code>pre-line</code>: 合并空白符，使文件正常换行</li>
+<li><code>pre-wrap</code>: 设定保留空白符，在浏览器中可以正常换行</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="7-大小写转换-text-transform-属性">7. 大小写转换 <code>text-transform</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-transform: none | capitalize | uppercase | lowercase | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>none</code>: 默认值，保留文字原本样式</li>
+<li><code>capitalize</code>: 第一个字母大写</li>
+<li><code>uppercase</code>: 字母全部转成大写</li>
+<li><code>lowercase</code>: 字母全部转成小写</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性</li>
+</ul>
+<h3><span id="8-文字阴影-text-shadow-属性">8. 文字阴影 <code>text-shadow</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur-radius color | none | initial | inherit;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>h-shadow</code>: 水平阴影，右正左负，不可省略</li>
+<li><code>v-shadow</code>: 垂直阴影，下正上负，不可省略</li>
+<li><code>blur-radius</code>: 模糊范围，单位和h-shadow相同，可省略</li>
+<li><code>color</code>: 阴影颜色，可省略</li>
+<li><code>none</code>: 默认值，即无阴影</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="9-线条装饰-text-decoration-属性">9. 线条装饰 <code>text-decoration</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-decoration: none | underline | overline | line-through | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>none</code>: 默认值，即正常显示</li>
+<li><code>underline</code>: 底线</li>
+<li><code>overline</code>: 顶线</li>
+<li><code>line-through</code>: 删除线</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性</li>
+</ul>
+<h3><span id="10-制表符宽度-tab-size-属性">10. 制表符宽度 <code>tab-size</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tab-size: number | length | initial | inherit;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>number</code>: 设置宽度数值，默认值为8，即8个英文字符宽度</li>
+<li><code>length</code>: 设值制表符长度</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性<h3><span id="11-换行-word-wrap-属性">11. 换行 <code>word-wrap</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">word-wrap: normal | break-word;</span><br></pre></td></tr></table></figure></li>
+<li><code>normal</code>: 默认值，只在可以换行的地方换行，否则显示到结束为止</li>
+<li><code>break-word</code>: 可用于将较长的单字或URL网址中途换行</li>
+</ul>
+<h3><span id="12-溢出-text-overflow-属性">12. 溢出 <code>text-overflow</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-overflow: clip | ellipsis | string | initial | inherit;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>clip</code>: 超出显示区不予显示</li>
+<li><code>ellipsis</code>: 超出显示区以“…”显示</li>
+<li><code>string</code>: 使用给定的字符串替换被隐藏的文本</li>
+<li><code>initial</code>: 使用默认设置</li>
+<li><code>inherit</code>: 继承父元素属性</li>
+</ul>
+<h2><span id="三-项目列表">三、项目列表</span></h2><h3><span id="1-项目列表符号-list-style-type-属性">1. 项目列表符号 <code>list-style-type</code> 属性</span></h3><p>默认值：    “disc” for <code>&lt;ul&gt;</code> and “decimal” for <code>&lt;ol&gt;</code><br><img src="https://img-blog.csdnimg.cn/20201104173617947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-图片项目符号-list-style-image-属性">2. 图片项目符号 <code>list-style-image</code> 属性</span></h3><p>list-style-image 属性使用图像来替换列表项的标记。<br><img src="https://img-blog.csdnimg.cn/20201104173718334.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="3-项目符号与编号位置-list-style-position-属性">3. 项目符号与编号位置 <code>list-style-position</code> 属性</span></h3><p><img src="https://img-blog.csdnimg.cn/20201104173854514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/202011041738198.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="4-简易表示法-list-style-属性">4. 简易表示法 <code>list-style</code> 属性</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">list-style</span>: <span class="selector-tag">list-style-type</span> <span class="selector-tag">list-style-position</span> <span class="selector-tag">list-style-image</span>;</span><br></pre></td></tr></table></figure>
+<p>某个属性使用默认值时可省略</p>
+<h2><span id="四-背景">四、背景</span></h2><h3><span id="1-背景颜色-background-color-属性">1. 背景颜色 <code>background-color</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: color | transparent | inherit;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201104174342645.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-背景图-background-image-属性">2. 背景图 <code>background-image</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url | none | inherit;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201104174611698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="3-背景重复出现-background-repeat-属性">3. 背景重复出现 <code>background-repeat</code> 属性</span></h3><p>默认将图片以左上角为基准点放置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-repeat: repeat | repeat-x | repeat-y | no-repeat | space | round | inherit;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201104174730438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li><code>space</code>: 设定图片在水平和垂直重复出现时自动调节间距，使图片完整出现</li>
+<li><code>round</code>: 设定图片在水平和垂直重复出现时自行重设大小，使图片完整出现</li>
+</ul>
+<h3><span id="4-背景位置-background-position-属性">4. 背景位置 <code>background-position</code> 属性</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">value</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201104175213881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="5-背景大小-background-size-属性">5. 背景大小 <code>background-size</code> 属性</span></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-size: auto | length | percentage | cover | contain | initial | inherit;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201104181103927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li><code>auto</code>: 默认选项，以原图大小显示，空间不够时只显示局部</li>
+<li><code>initial</code>: 使用默认设置</li>
+</ul>
+<h3><span id="6-背景随内容滚动-background-attachment-属性">6. 背景随内容滚动 <code>background-attachment</code> 属性</span></h3><p> 设置背景图像是否固定或者随着页面的其余部分滚动<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment: scroll | fixed | local | initial | inherit;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104181719889.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li><code>local</code>: 效果与scroll相同，但在inframe显示时，背景图不滚动<h3><span id="7-背景显示区域-background-clip-属性">7. 背景显示区域 <code>background-clip</code> 属性</span></h3>指定背景绘制区域。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-clip: border-box | padding-box | content-box;</span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20201105211230951.png#pic_center" alt="在这里插入图片描述"></li>
+</ul>
+<h3><span id="8-背景显示基准点-background-origin-属性">8. 背景显示基准点 <code>background-origin</code> 属性</span></h3><p>盒子模型左上角为基准点，设定关于background-position属性的相对位置<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-origin: border-box | padding-box | content-box;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201105211442373.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="9-简易表示法-background-属性">9. 简易表示法 <code>background</code> 属性</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">background-color</span> <span class="selector-tag">background-position</span> <span class="selector-tag">background-size</span> <span class="selector-tag">background-repeat</span> </span><br><span class="line">			<span class="selector-tag">background-origin</span> <span class="selector-tag">background-clip</span> <span class="selector-tag">background-attachment</span> <span class="selector-tag">background-image</span>;</span><br></pre></td></tr></table></figure>
+<p>各值之间用空格分隔，不分先后顺序，可以只有其中的某些值</p>
+<h2><span id="五-表格">五、表格</span></h2><h3><span id="1-表格标题">1. 表格标题</span></h3><p>使用 <code>caption</code> 元素的 <code>caption-side</code> 属性指定表格标题的位置<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caption-side: top | bottom | inherit;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104183453659.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="2-表格底色">2. 表格底色</span></h3><p>实例：<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">th</span> &#123;<span class="attribute">background-color</span>: aqua;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">td</span> &#123;<span class="attribute">background-color</span>: aliceblue;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3><span id="3-表格框线">3. 表格框线</span></h3><p>实例：<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">table</span> &#123;<span class="attribute">border</span>: <span class="number">3px</span> solid blue;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">th</span> &#123;<span class="attribute">border</span>: <span class="number">2px</span> solid green;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">td</span> &#123;<span class="attribute">border</span>: <span class="number">1px</span> solid red;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3><span id="4-单元格框线">4. 单元格框线</span></h3><p>使用 <code>table</code> 元素的<code>border-collapse</code> 属性指定<strong>单元格框线模式</strong><br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-collapse: separate | collapse | inherit;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104184057810.png#pic_center" alt="在这里插入图片描述"><br>在separate框线模式下，可以使用 <code>table</code> 元素的<code>border-spacing</code> 属性设定<strong>单元格</strong>与单元格间或单元格与表格间<strong>框线的距离</strong><br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-spacing</span>: <span class="selector-tag">length</span> <span class="selector-attr">[length]</span>;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104184509925.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="5-单元格内边距">5. 单元格内边距</span></h3><p>实例：<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">th</span> &#123;<span class="attribute">padding</span>: <span class="number">5px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">td</span> &#123;<span class="attribute">padding</span>: <span class="number">5px</span>;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3><span id="6-显示或隐藏空白单元格">6. 显示或隐藏空白单元格</span></h3><p>使用 <code>table</code> 元素的<code>empty-cells</code> 属性显示或隐藏空白单元格<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">empty-cells: hide | show | inherit;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104190208853.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="7-单元格内容排版">7. 单元格内容排版</span></h3><p>可以使用 <code>text-align</code> 属性以不同方式对齐单元格内容</p>
+<h3><span id="8-表格版面排版">8. 表格版面排版</span></h3><p>使用 <code>table</code> 元素的<code>table-layout</code> 属性表格版面排版方式<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table-layout: hide | show | inherit;</span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20201104190623199.png#pic_center" alt="在这里插入图片描述"></p>
+<h3><span id="9-设置表格奇偶行不同的样式">9. 设置表格奇偶行不同的样式</span></h3><p>使用以下选择器：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">n</span><span class="selector-pseudo">:nth-child(n)</span> <span class="comment">/*将设置套用在第n个子元素的p元素*/</span></span><br></pre></td></tr></table></figure>
+<p>则</p>
+<ul>
+<li>奇数行：<strong>tr:nth-child(2n+1)</strong></li>
+<li>偶数行：<strong>tr:nth-child(2n)</strong><h2><span id="六-渐变">六、渐变</span></h2><h3><span id="1-线性渐变-linear-gardient">1. 线性渐变 <code>linear-gardient()</code></span></h3></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">direction</span>, <span class="selector-tag">color-stop</span>, ... , <span class="selector-tag">color-stop</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>direction</code>: 设定色彩方向，可以用角度或英文表示<pre><code>       **上-&gt;下**：to bottom | 180deg
+  **下-&gt;上**：to top | 0deg
+  **左-&gt;右**：to right | 90deg
+  **右-&gt;左**：to left | 270deg</code></pre>
+</li>
+<li><code>color-stop</code>: 设定色彩驻停点，可以在颜色后指定位置，如 red 50%，所有百分比之和等于100%</li>
+</ul>
+<p>css 不均匀渐变百分比表示指定颜色的标准中心线位置，百分比之间是过渡色，如果百分比位置之间有重叠会失去渐变过渡色。比如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">red</span> 10%, <span class="selector-tag">green</span> 85%, <span class="selector-tag">blue</span> 90%)</span><br></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li>10% 表示 red 的颜色中心线在线性渐变方向的 10% 的位置。</li>
+<li>85% 表示 green 的颜色中心线在线性渐变方向的 85% 的位置。</li>
+<li>90% 表示 blue 的颜色中心线在线性渐变方向的 90% 的位置。</li>
+<li>10% 到 85% 是 red-green 的过渡色，85%-90% 是 green-blue 的过渡色。</li>
+</ul>
+<h3><span id="2-放射渐变-radial-gardient">2. 放射渐变 <code>radial-gardient()</code></span></h3><p>默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">radial-gradient</span>(<span class="selector-tag">shape</span> <span class="selector-tag">length</span> <span class="selector-tag">position</span>, <span class="selector-tag">color-stop</span>, ... , <span class="selector-tag">color-stop</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>shape</code>: 设定色彩放射形状，如圆形(<strong>circle</strong>)、椭圆(<strong>ellipse</strong>)</li>
+<li><code>length</code>: 设定渐变大小，可以通过数值或以下关键词设定渐变大小<br> closest-side    | farthest-side | closest-corner | farthest-corner：</li>
+<li><code>position</code>: 设定渐变中心，可以使用数值、％或以下关键词设定渐变中心<br> top | right | bottom | left<h3><span id="3-重复线性渐变-repeating-linear-gardient">3. 重复线性渐变 <code>repeating-linear-gardient()</code></span></h3>通过设定其实色彩驻停点与结束色彩驻停点的长度来决定重复的次数。当长度为20%时，渐变重复5次。<h3><span id="4-重复放射渐变-repeating-radial-gardient">4. 重复放射渐变 <code>repeating-radial-gardient()</code></span></h3>通过设定其实色彩驻停点与结束色彩驻停点的长度来决定重复的次数。当长度为20%时，渐变重复5次。</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/";
+            const title         = "「CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变」";
+            const excerpt       = `一、CSS3基础1. CSS3基本语法1234567891011selector &#123; property1:value1; proterty2:value2; &#125;/*或*/selector &#123; 	prope...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2020-11-16</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 二维图形变换&amp;裁剪" href="/2020/11/16/二维图形变换&裁剪/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" CSS3笔记(2)——盒子模型+多栏+定位+弹性容器" href="/2020/11/16/CSS3笔记(2)——盒子模型+多栏+定位+弹性容器/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> HTML5笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(4)%E2%80%94%E2%80%94%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88%E5%BD%A2%E7%8A%B6+%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/"><i class="fa  fa-book"></i> CSS3笔记(4)——鼠标指针形状+响应式网页设计</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(3)%E2%80%94%E2%80%94%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C+%E5%8A%A8%E7%94%BB+%E5%8F%98%E5%BD%A2/"><i class="fa  fa-book"></i> CSS3笔记(3)——过渡效果+动画+变形</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(2)%E2%80%94%E2%80%94%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B+%E5%A4%9A%E6%A0%8F+%E5%AE%9A%E4%BD%8D+%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8/"><i class="fa  fa-book"></i> CSS3笔记(2)——盒子模型+多栏+定位+弹性容器</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/"><i class="fa  fa-book"></i> CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2020 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
