@@ -143,12 +143,12 @@
             <div class="kratos-post-content">
                 
                 <hr />
-                <h2><span id="一-设置鼠标指针形状">一、设置鼠标指针形状</span></h2><p>使用 <code>cursor</code> 属性可以更改鼠标指针样式。</p>
+                <h2 id="一、设置鼠标指针形状"><a href="#一、设置鼠标指针形状" class="headerlink" title="一、设置鼠标指针形状"></a>一、设置鼠标指针形状</h2><p>使用 <code>cursor</code> 属性可以更改鼠标指针样式。</p>
 <p>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cursor</span>: <span class="selector-tag">value</span>;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20201108220432119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2><span id="二-媒体查询">二、媒体查询</span></h2><h3><span id="1-媒体类型">1. 媒体类型</span></h3><p>下列是CSS中定义的<strong>媒体类型</strong>(media types).</p>
+<h2 id="二、媒体查询"><a href="#二、媒体查询" class="headerlink" title="二、媒体查询"></a>二、媒体查询</h2><h3 id="1-媒体类型"><a href="#1-媒体类型" class="headerlink" title="1. 媒体类型"></a>1. 媒体类型</h3><p>下列是CSS中定义的<strong>媒体类型</strong>(media types).</p>
 <ul>
 <li><strong>all</strong>    用于所有的媒体设备。</li>
 <li><strong>aural</strong>    用于语音和音频合成器。</li>
@@ -170,7 +170,7 @@
 <li>分辨率</li>
 </ul>
 <p>目前很多针对苹果手机，Android 手机，平板等设备都会使用到多媒体查询。</p>
-<h3><span id="2-媒体特性">2. 媒体特性</span></h3><p>下列是CSS中定义的<strong>媒体特性</strong>(media fatures).</p>
+<h3 id="2-媒体特性"><a href="#2-媒体特性" class="headerlink" title="2. 媒体特性"></a>2. 媒体特性</h3><p>下列是CSS中定义的<strong>媒体特性</strong>(media fatures).</p>
 <ul>
 <li><strong>color</strong>: 输出设备(屏幕)每个色彩的位数(bits)。</li>
 <li><strong>color index</strong>: 输出设备(屏幕)可以输出的色彩数量。</li>
@@ -187,12 +187,12 @@
 <ul>
 <li><strong>orientation</strong>: 输出设备(屏幕)的方向，可能值是landscape (水平)或portait (垂直)。</li>
 <li><strong>scan</strong>: 输出设备(屏幕)的扫描方式，可能值是interlace (交错式)或progressive (循序式)。</li>
-<li><strong>grid</strong>: 输出设备(屏幕)的扫描方式，可能值是1 (网格grid)或0 (点阵bimap)。<h3><span id="3-媒体查询-media">3. 媒体查询 <code>@media</code></span></h3>语法<br>多媒体查询由多种媒体组成，可以包含一个或多个表达式，表达式根据条件是否成立返回 true 或 false。</li>
+<li><strong>grid</strong>: 输出设备(屏幕)的扫描方式，可能值是1 (网格grid)或0 (点阵bimap)。<h3 id="3-媒体查询-media"><a href="#3-媒体查询-media" class="headerlink" title="3. 媒体查询 @media"></a>3. 媒体查询 <code>@media</code></h3>语法<br>多媒体查询由多种媒体组成，可以包含一个或多个表达式，表达式根据条件是否成立返回 true 或 false。</li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> mediatype <span class="keyword">and</span> | <span class="keyword">not</span> | <span class="keyword">only</span> (media feature) &#123;</span><br><span class="line">    <span class="selector-tag">CSS-Code</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="4-媒体查询时使用-ltlinkgt">4. 媒体查询时使用 <code>&lt;link&gt;</code></span></h3><p>针对不同的媒体使用不同 stylesheets :</p>
+<h3 id="4-媒体查询时使用-lt-link-gt"><a href="#4-媒体查询时使用-lt-link-gt" class="headerlink" title="4. 媒体查询时使用 &lt;link&gt;"></a>4. 媒体查询时使用 <code>&lt;link&gt;</code></h3><p>针对不同的媒体使用不同 stylesheets :</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;mediatype and | not | only (media feature)&quot; href=&quot;mystylesheet.css&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="三-响应式rwd网页设计">三、响应式（RWD）网页设计</span></h2><h3><span id="1-设计响应式网页的基本原则">1. 设计响应式网页的基本原则</span></h3><p>对于响应式网页而言，主要要掌握的原则如下：</p>
+<h2 id="三、响应式（RWD）网页设计"><a href="#三、响应式（RWD）网页设计" class="headerlink" title="三、响应式（RWD）网页设计"></a>三、响应式（RWD）网页设计</h2><h3 id="1-设计响应式网页的基本原则"><a href="#1-设计响应式网页的基本原则" class="headerlink" title="1. 设计响应式网页的基本原则"></a>1. 设计响应式网页的基本原则</h3><p>对于响应式网页而言，主要要掌握的原则如下：</p>
 <ol>
 <li><p>使用HTML设计网页内容。</p>
 </li>
@@ -203,7 +203,7 @@
 <li><p>为PC屏幕设计CSS样式表，让网页可在PC屏幕完美呈现。</p>
 </li>
 </ol>
-<h3><span id="2viewport">2.viewport</span></h3><p><strong>viewport</strong> 指的是屏事分辨率，会因为所使用的设备而有不同的值。</p>
+<h3 id="2-viewport"><a href="#2-viewport" class="headerlink" title="2.viewport"></a>2.viewport</h3><p><strong>viewport</strong> 指的是屏事分辨率，会因为所使用的设备而有不同的值。</p>
 <p>在设计响应式网页时，必须在 <code>&lt;meta&gt;</code> 元素内进行下列设定。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;, &quot;initial-scale=1.0&quot;&gt;</span><br></pre></td></tr></table></figure>
 
@@ -375,6 +375,12 @@ a...`;
         
           
           
+            <a class="list-group-item" href="/2020/11/16/Sql%E8%AF%AD%E5%8F%A5%E5%9F%BA%E7%A1%80%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/"><i class="fa  fa-book"></i> Sql语句基础要点总结</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> HTML5笔记</a>
             
           
@@ -398,11 +404,7 @@ a...`;
           
         
           
-          
-            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/"><i class="fa  fa-book"></i> CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变</a>
             
-          
-        
           
             
           

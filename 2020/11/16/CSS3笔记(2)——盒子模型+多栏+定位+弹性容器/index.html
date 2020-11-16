@@ -143,8 +143,8 @@
             <div class="kratos-post-content">
                 
                 <hr />
-                <h2><span id="一-盒子模型">一、盒子模型</span></h2><h3><span id="1-构成">1. 构成</span></h3><p>盒子模型由<strong>内容盒</strong>、<strong>内边距</strong>、<strong>边框</strong>和<strong>外边距</strong>构成<br><img src="https://img-blog.csdnimg.cn/20201105202056350.png#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="2-外边距margin">2. 外边距（margin）</span></h3><p><strong>使用方法：</strong></p>
+                <h2 id="一、盒子模型"><a href="#一、盒子模型" class="headerlink" title="一、盒子模型"></a>一、盒子模型</h2><h3 id="1-构成"><a href="#1-构成" class="headerlink" title="1. 构成"></a>1. 构成</h3><p>盒子模型由<strong>内容盒</strong>、<strong>内边距</strong>、<strong>边框</strong>和<strong>外边距</strong>构成<br><img src="https://img-blog.csdnimg.cn/20201105202056350.png#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="2-外边距（margin）"><a href="#2-外边距（margin）" class="headerlink" title="2. 外边距（margin）"></a>2. 外边距（margin）</h3><p><strong>使用方法：</strong></p>
 <p>1.单边外边距属性</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin-top</span><span class="selector-pseudo">:100px</span>;</span><br><span class="line"><span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:100px</span>;</span><br><span class="line"><span class="selector-tag">margin-right</span><span class="selector-pseudo">:50px</span>;</span><br><span class="line"><span class="selector-tag">margin-left</span><span class="selector-pseudo">:50px</span>;</span><br></pre></td></tr></table></figure>
 
@@ -159,9 +159,9 @@
 <p>注意：</p>
 <ul>
 <li> <strong><code>&lt;body&gt;</code></strong> 元素的 <strong><code>margin</code></strong> 属性值默认为<strong>8px</strong></li>
-<li>当垂直排列的两个元素外边距相遇时，浏览器会<strong>自动合并</strong>成二者中的较大值，但<strong>行内(inline)元素框</strong>、<strong>浮动框</strong>与<strong>绝对地址框</strong>不会合并<h3><span id="3-内边距padding">3. 内边距（padding）</span></h3>使用方法与外边距相似<h3><span id="4-边框border">4. 边框（border）</span></h3><h4><span id="1边框样式-border-style-属性">（1）边框样式 <code>border-style</code> 属性</span></h4><img src="https://img-blog.csdnimg.cn/20201105204940597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+<li>当垂直排列的两个元素外边距相遇时，浏览器会<strong>自动合并</strong>成二者中的较大值，但<strong>行内(inline)元素框</strong>、<strong>浮动框</strong>与<strong>绝对地址框</strong>不会合并<h3 id="3-内边距（padding）"><a href="#3-内边距（padding）" class="headerlink" title="3. 内边距（padding）"></a>3. 内边距（padding）</h3>使用方法与外边距相似<h3 id="4-边框（border）"><a href="#4-边框（border）" class="headerlink" title="4. 边框（border）"></a>4. 边框（border）</h3><h4 id="（1）边框样式-border-style-属性"><a href="#（1）边框样式-border-style-属性" class="headerlink" title="（1）边框样式 border-style 属性"></a>（1）边框样式 <code>border-style</code> 属性</h4><img src="https://img-blog.csdnimg.cn/20201105204940597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h4><span id="2边框颜色-border-color-属性">（2）边框颜色 <code>border-color</code> 属性</span></h4><p>border-color属性用于设置边框的颜色。可以设置的颜色：</p>
+<h4 id="（2）边框颜色-border-color-属性"><a href="#（2）边框颜色-border-color-属性" class="headerlink" title="（2）边框颜色 border-color 属性"></a>（2）边框颜色 <code>border-color</code> 属性</h4><p>border-color属性用于设置边框的颜色。可以设置的颜色：</p>
 <ul>
 <li><p>name - 指定颜色的名称，如 “red”</p>
 </li>
@@ -173,12 +173,12 @@
 </li>
 </ul>
 <p><strong>注意</strong>： border-color单独使用是不起作用的，必须得先使用border-style来设置边框样式。</p>
-<h4><span id="3边框宽度-border-width-属性">（3）边框宽度 <code>border-width</code> 属性</span></h4><p>为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em(单位为 px, pt, cm, em 等)，或者使用 3 个关键字之一，它们分别是 <strong>thick</strong> 、<strong>medium</strong>（默认值） 和 <strong>thin</strong>。</p>
+<h4 id="（3）边框宽度-border-width-属性"><a href="#（3）边框宽度-border-width-属性" class="headerlink" title="（3）边框宽度 border-width 属性"></a>（3）边框宽度 <code>border-width</code> 属性</h4><p>为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em(单位为 px, pt, cm, em 等)，或者使用 3 个关键字之一，它们分别是 <strong>thick</strong> 、<strong>medium</strong>（默认值） 和 <strong>thin</strong>。</p>
 <p><strong>注意</strong>：CSS 没有定义 3 个关键字的具体宽度，所以一个用户可能把 thick 、medium 和 thin 分别设置为等于 5px、3px 和 2px，而另一个用户则分别设置为 3px、2px 和 1px。</p>
-<h4><span id="4简易表示法-border-属性">（4）简易表示法 <code>border</code> 属性</span></h4><p>语法</p>
+<h4 id="（4）简易表示法-border-属性"><a href="#（4）简易表示法-border-属性" class="headerlink" title="（4）简易表示法 border 属性"></a>（4）简易表示法 <code>border</code> 属性</h4><p>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border</span>: <span class="selector-tag">border-style</span> <span class="selector-tag">border-color</span> <span class="selector-tag">border-width</span>;</span><br></pre></td></tr></table></figure>
 
-<h4><span id="5边框圆角-border-radius-属性">（5）边框圆角 <code>border-radius</code> 属性</span></h4><p>语法</p>
+<h4 id="（5）边框圆角-border-radius-属性"><a href="#（5）边框圆角-border-radius-属性" class="headerlink" title="（5）边框圆角 border-radius 属性"></a>（5）边框圆角 <code>border-radius</code> 属性</h4><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: length|% [[[length|%] length|%] length|%]</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意:</strong> </p>
@@ -186,15 +186,15 @@
 <li><p>每个半径的四个值的顺序是：左上角，右上角，右下角，左下角。</p>
 </li>
 <li><p>如果省略左下角，右上角是相同的。如果省略右下角，左上角是相同的。如果省略右上角，左上角是相同的。</p>
-<h4><span id="6图样边框-border-image-属性">（6）图样边框 <code>border-image</code> 属性</span></h4><p>语法</p>
+<h4 id="（6）图样边框-border-image-属性"><a href="#（6）图样边框-border-image-属性" class="headerlink" title="（6）图样边框 border-image 属性"></a>（6）图样边框 <code>border-image</code> 属性</h4><p>语法</p>
 </li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-image: source slice width outset repeat|initial|inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201105210336378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="5-盒子阴影-box-shadow-属性">5. 盒子阴影 <code>box-shadow</code> 属性</span></h3><p>语法</p>
+<h3 id="5-盒子阴影-box-shadow-属性"><a href="#5-盒子阴影-box-shadow-属性" class="headerlink" title="5. 盒子阴影 box-shadow 属性"></a>5. 盒子阴影 <code>box-shadow</code> 属性</h3><p>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">h-shadow</span> <span class="selector-tag">v-shadow</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">color</span> <span class="selector-tag">inset</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201105212500592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="6-盒子大小-box-sizing-属性">6. 盒子大小 <code>box-sizing</code> 属性</span></h3><p>规定容器元素的最终尺寸计算方式</p>
+<h3 id="6-盒子大小-box-sizing-属性"><a href="#6-盒子大小-box-sizing-属性" class="headerlink" title="6. 盒子大小 box-sizing 属性"></a>6. 盒子大小 <code>box-sizing</code> 属性</h3><p>规定容器元素的最终尺寸计算方式</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: content-box|border-box|inherit:</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201105212611395.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
@@ -210,51 +210,51 @@
 <li><p>W3C标准盒模型（content-box），border、padding 的设置会破坏元素宽高，必须得重新计算，非常麻烦（除了在IE浏览器，默认就是标准盒模型，所以可以用 box-sizing 来转换）；</p>
 </li>
 <li><p>IE（怪异）盒模型（border-box），border、padding 的设置不会影响元素的宽高，这非常实用（且因为IE盒模型不是标准，所以才有 box-sizing 这个标准属性来设置，将它标准化）【IE6/5 是怪异模型，IE7开始是标准盒模型】</p>
-<h3><span id="7-内容溢出处理">7. 内容溢出处理</span></h3><p>语法</p>
+<h3 id="7-内容溢出处理"><a href="#7-内容溢出处理" class="headerlink" title="7. 内容溢出处理"></a>7. 内容溢出处理</h3><p>语法</p>
 </li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: visible|hidden|scroll|auto;</span><br><span class="line">overflow-x: visible|hidden|scroll|auto|no-display|no-content;</span><br><span class="line">overflow-y: visible|hidden|scroll|auto|no-display|no-content;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20201105213643456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="8-outline-属性">8. <code>outline</code> 属性</span></h3><p>outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。<br>语法</p>
+<h3 id="8-outline-属性"><a href="#8-outline-属性" class="headerlink" title="8. outline 属性"></a>8. <code>outline</code> 属性</h3><p>outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。<br>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">outline-color</span>, <span class="selector-tag">outline-style</span>, <span class="selector-tag">outline-width</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201105214052322.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <ul>
-<li><code>outline-offset</code>：设置轮廓框架在 border 边缘外的偏移值<h3><span id="9-可调整大小-resize-属性">9. 可调整大小 <code>resize</code> 属性</span></h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize: none | both | horizontal | vertical:</span><br></pre></td></tr></table></figure>
+<li><code>outline-offset</code>：设置轮廓框架在 border 边缘外的偏移值<h3 id="9-可调整大小-resize-属性"><a href="#9-可调整大小-resize-属性" class="headerlink" title="9. 可调整大小 resize 属性"></a>9. 可调整大小 <code>resize</code> 属性</h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resize: none | both | horizontal | vertical:</span><br></pre></td></tr></table></figure>
 <img src="https://img-blog.csdnimg.cn/20201105214355440.png#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h2><span id="二-多栏布局">二、多栏布局</span></h2><h3><span id="1-栏数量和宽度-columns-属性">1. 栏数量和宽度 <code>columns</code> 属性</span></h3><h4><span id="1栏数量-column-count-属性">（1）栏数量 <code>column-count</code> 属性</span></h4><p>语法</p>
+<h2 id="二、多栏布局"><a href="#二、多栏布局" class="headerlink" title="二、多栏布局"></a>二、多栏布局</h2><h3 id="1-栏数量和宽度-columns-属性"><a href="#1-栏数量和宽度-columns-属性" class="headerlink" title="1. 栏数量和宽度 columns 属性"></a>1. 栏数量和宽度 <code>columns</code> 属性</h3><h4 id="（1）栏数量-column-count-属性"><a href="#（1）栏数量-column-count-属性" class="headerlink" title="（1）栏数量 column-count 属性"></a>（1）栏数量 <code>column-count</code> 属性</h4><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-count: auto | number | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>auto</code>: 默认值（单栏），但是会根据 <code>colunm-width</code> 属性值自动调整</li>
-<li><code>number</code>: 栏的数量<h4><span id="2栏宽度-column-width-属性">（2）栏宽度 <code>column-width</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-width: auto | number | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>number</code>: 栏的数量<h4 id="（2）栏宽度-column-width-属性"><a href="#（2）栏宽度-column-width-属性" class="headerlink" title="（2）栏宽度 column-width 属性"></a>（2）栏宽度 <code>column-width</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-width: auto | number | initial | inherit;</span><br></pre></td></tr></table></figure></li>
 <li><code>auto</code>: 默认值（单栏），但是会根据 <code>colunm-count</code> 属性值自动调整</li>
 <li><code>number</code>: 指定栏的最佳宽度，并非绝对宽度，浏览器会根据窗口宽度调整</li>
 </ul>
-<h4><span id="3简易表示法-columns-属性">（3）简易表示法 <code>columns</code> 属性</span></h4><p>语法</p>
+<h4 id="（3）简易表示法-columns-属性"><a href="#（3）简易表示法-columns-属性" class="headerlink" title="（3）简易表示法 columns 属性"></a>（3）简易表示法 <code>columns</code> 属性</h4><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">columns: auto | column-count column-width | initial | inherit;</span><br></pre></td></tr></table></figure>
-<h3><span id="2-栏间距-column-gap-属性">2. 栏间距 <code>column-gap</code> 属性</span></h3><p>语法</p>
+<h3 id="2-栏间距-column-gap-属性"><a href="#2-栏间距-column-gap-属性" class="headerlink" title="2. 栏间距 column-gap 属性"></a>2. 栏间距 <code>column-gap</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-gap: normal | number | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>normal</code>: 默认值，W3C建议为1em</li>
-<li><code>number</code>: 指定栏间距值<h3><span id="3-栏线-column-rule-属性">3. 栏线 <code>column-rule</code> 属性</span></h3><h4><span id="1栏线类型-column-rule-style-属性">（1）栏线类型 <code>column-rule-style</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-rule-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset;</span><br></pre></td></tr></table></figure>
+<li><code>number</code>: 指定栏间距值<h3 id="3-栏线-column-rule-属性"><a href="#3-栏线-column-rule-属性" class="headerlink" title="3. 栏线 column-rule 属性"></a>3. 栏线 <code>column-rule</code> 属性</h3><h4 id="（1）栏线类型-column-rule-style-属性"><a href="#（1）栏线类型-column-rule-style-属性" class="headerlink" title="（1）栏线类型 column-rule-style 属性"></a>（1）栏线类型 <code>column-rule-style</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-rule-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset;</span><br></pre></td></tr></table></figure>
 <img src="https://img-blog.csdnimg.cn/20201106160222276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h4><span id="2栏线颜色-column-rule-color-属性">（2）栏线颜色 <code>column-rule-color</code> 属性</span></h4><p>语法</p>
+<h4 id="（2）栏线颜色-column-rule-color-属性"><a href="#（2）栏线颜色-column-rule-color-属性" class="headerlink" title="（2）栏线颜色 column-rule-color 属性"></a>（2）栏线颜色 <code>column-rule-color</code> 属性</h4><p>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">column-rule-color</span>: <span class="selector-tag">color</span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>color</code>: 颜色值<h4><span id="3栏线颜色-column-rule-width-属性">（3）栏线颜色 <code>column-rule-width</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-rule-width: thin | medium | thick | length;</span><br></pre></td></tr></table></figure>
+<li><code>color</code>: 颜色值<h4 id="（3）栏线颜色-column-rule-width-属性"><a href="#（3）栏线颜色-column-rule-width-属性" class="headerlink" title="（3）栏线颜色 column-rule-width 属性"></a>（3）栏线颜色 <code>column-rule-width</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-rule-width: thin | medium | thick | length;</span><br></pre></td></tr></table></figure>
 <img src="https://img-blog.csdnimg.cn/20201106160436339.png#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h4><span id="4简易表示法-column-rule-属性">（4）简易表示法 <code>column-rule</code> 属性</span></h4><p>语法</p>
+<h4 id="（4）简易表示法-column-rule-属性"><a href="#（4）简易表示法-column-rule-属性" class="headerlink" title="（4）简易表示法 column-rule 属性"></a>（4）简易表示法 <code>column-rule</code> 属性</h4><p>语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">column-rule</span>: <span class="selector-tag">column-rule-width</span> <span class="selector-tag">column-rule-style</span> <span class="selector-tag">column-rule-color</span>;</span><br></pre></td></tr></table></figure>
-<h3><span id="4-跨栏显示-column-span-属性">4. 跨栏显示 <code>column-span</code> 属性</span></h3><p>语法</p>
+<h3 id="4-跨栏显示-column-span-属性"><a href="#4-跨栏显示-column-span-属性" class="headerlink" title="4. 跨栏显示 column-span 属性"></a>4. 跨栏显示 <code>column-span</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-span: none | all;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>none</code>: 默认值，不跨栏显示</li>
-<li><code>all</code>: 跨栏显示<h3><span id="5-栏填充方式-column-fill-属性">5. 栏填充方式 <code>column-fill</code> 属性</span></h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-fill: balance | auto;</span><br></pre></td></tr></table></figure></li>
+<li><code>all</code>: 跨栏显示<h3 id="5-栏填充方式-column-fill-属性"><a href="#5-栏填充方式-column-fill-属性" class="headerlink" title="5. 栏填充方式 column-fill 属性"></a>5. 栏填充方式 <code>column-fill</code> 属性</h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">column-fill: balance | auto;</span><br></pre></td></tr></table></figure></li>
 <li><code>balance</code>: 默认值，将内容平均分割</li>
-<li><code>auto</code>: 填满一栏后再填充下一栏<h3><span id="6-换栏和换页">6. 换栏和换页</span></h3><h4><span id="1在之前换栏页-break-before-属性">（1）在之前换栏/页 <code>break-before</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-before: auto | always | avoid | left | right | page | colunm | avoid-page | avoid-column;</span><br></pre></td></tr></table></figure></li>
+<li><code>auto</code>: 填满一栏后再填充下一栏<h3 id="6-换栏和换页"><a href="#6-换栏和换页" class="headerlink" title="6. 换栏和换页"></a>6. 换栏和换页</h3><h4 id="（1）在之前换栏-页-break-before-属性"><a href="#（1）在之前换栏-页-break-before-属性" class="headerlink" title="（1）在之前换栏/页 break-before 属性"></a>（1）在之前换栏/页 <code>break-before</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-before: auto | always | avoid | left | right | page | colunm | avoid-page | avoid-column;</span><br></pre></td></tr></table></figure></li>
 <li><code>auto</code>: 默认值，由浏览器自动调整</li>
 <li><code>always</code>: 特定位置处换栏/页</li>
 <li><code>avoid</code>: 特定位置处不换栏/页</li>
@@ -263,111 +263,111 @@
 <li><code>page</code>: 特定位置处换页</li>
 <li><code>column</code>: 特定位置处换栏</li>
 <li><code>avoid-page</code>: 特定位置处不换页</li>
-<li><code>avoid-column</code>: 特定位置处不换栏<h4><span id="2在之后换栏页-break-after-属性">（2）在之后换栏/页 <code>break-after</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-after: auto | always | avoid | left | right | page | colunm | avoid-page | avoid-column;</span><br></pre></td></tr></table></figure>
-属性同上<h4><span id="3在元素中换栏页-break-inside-属性">（3）在元素中换栏/页 <code>break-inside</code> 属性</span></h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-inside: auto | avoid;</span><br></pre></td></tr></table></figure></li>
+<li><code>avoid-column</code>: 特定位置处不换栏<h4 id="（2）在之后换栏-页-break-after-属性"><a href="#（2）在之后换栏-页-break-after-属性" class="headerlink" title="（2）在之后换栏/页 break-after 属性"></a>（2）在之后换栏/页 <code>break-after</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-after: auto | always | avoid | left | right | page | colunm | avoid-page | avoid-column;</span><br></pre></td></tr></table></figure>
+属性同上<h4 id="（3）在元素中换栏-页-break-inside-属性"><a href="#（3）在元素中换栏-页-break-inside-属性" class="headerlink" title="（3）在元素中换栏/页 break-inside 属性"></a>（3）在元素中换栏/页 <code>break-inside</code> 属性</h4>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break-inside: auto | avoid;</span><br></pre></td></tr></table></figure></li>
 <li><code>auto</code>: 默认值，由浏览器自动调整</li>
-<li><code>avoid</code>: 特定元素内不换栏/页<h2><span id="三-定位与网页排版">三、定位与网页排版</span></h2><h3><span id="1-区块层级与行内层级">1. 区块层级与行内层级</span></h3></li>
+<li><code>avoid</code>: 特定元素内不换栏/页<h2 id="三、定位与网页排版"><a href="#三、定位与网页排版" class="headerlink" title="三、定位与网页排版"></a>三、定位与网页排版</h2><h3 id="1-区块层级与行内层级"><a href="#1-区块层级与行内层级" class="headerlink" title="1. 区块层级与行内层级"></a>1. 区块层级与行内层级</h3></li>
 <li>**区块层级(block)**：在新的一行放置，常见元素：<code>&lt;div&gt;</code> <code>&lt;hn&gt;</code> <code>&lt;p&gt;</code> <code>&lt;pre&gt;</code></li>
-<li>**行内层级(inline)**：在同一行放置，常见元素：<code>&lt;a&gt;</code> <code>&lt;img&gt;</code> <code>&lt;span&gt;</code><h3><span id="2-盒子大小极限">2. 盒子大小极限</span></h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">max-width: none | length | % | initial | inherit;</span><br><span class="line">max-heigth: none | length | % | initial | inherit;</span><br><span class="line">nin-width: none | length | % | initial | inherit;</span><br><span class="line">min-heigth: none | length | % | initial | inherit;</span><br></pre></td></tr></table></figure>
+<li>**行内层级(inline)**：在同一行放置，常见元素：<code>&lt;a&gt;</code> <code>&lt;img&gt;</code> <code>&lt;span&gt;</code><h3 id="2-盒子大小极限"><a href="#2-盒子大小极限" class="headerlink" title="2. 盒子大小极限"></a>2. 盒子大小极限</h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">max-width: none | length | % | initial | inherit;</span><br><span class="line">max-heigth: none | length | % | initial | inherit;</span><br><span class="line">nin-width: none | length | % | initial | inherit;</span><br><span class="line">min-heigth: none | length | % | initial | inherit;</span><br></pre></td></tr></table></figure>
 <img src="https://img-blog.csdnimg.cn/2020110616332624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
 </ul>
-<h3><span id="3-display-属性">3. <code>display</code> 属性</span></h3><p>语法</p>
+<h3 id="3-display-属性"><a href="#3-display-属性" class="headerlink" title="3. display 属性"></a>3. <code>display</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: none | block | inline | inline-block | ...;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106163433199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="4-position-属性">4. <code>position</code> 属性</span></h3><p>语法</p>
+<h3 id="4-position-属性"><a href="#4-position-属性" class="headerlink" title="4. position 属性"></a>4. <code>position</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: absolute | fixed | relative | static | sticky | inherit | initial;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>absolute</code>: 相对于浏览器窗口左上角，窗口卷动时元素随之卷动</li>
 <li><code>fixed</code>: 相对于浏览器窗口左上角，窗口卷动时元素不随之卷动</li>
 <li><code>relative</code>: 相对于正常位置定位</li>
 <li><code>static</code>: 以正常顺序（即HTML文件代码顺序）排序，对于区块盒子，沿竖直方向由上往下显示；对于内层级，沿水平方向从左至右显示</li>
-<li><code>sticky</code>: 粘性定位的元素是依赖于用户的滚动，在 <code>position: relative</code> 与 <code>position: fixed</code> 定位之间切换<br>（注意：元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。）<h3><span id="5-float-属性">5. <code>float</code> 属性</span></h3>float 属性指定一个盒子（元素）是否应该浮动</li>
+<li><code>sticky</code>: 粘性定位的元素是依赖于用户的滚动，在 <code>position: relative</code> 与 <code>position: fixed</code> 定位之间切换<br>（注意：元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。）<h3 id="5-float-属性"><a href="#5-float-属性" class="headerlink" title="5. float 属性"></a>5. <code>float</code> 属性</h3>float 属性指定一个盒子（元素）是否应该浮动</li>
 </ul>
 <p>注意： 绝对定位的元素忽略float属性</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: none | left | rignt | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106170026534.png#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="6-clear-属性">6. <code>clear</code> 属性</span></h3><p>clear 属性指定段落的左侧或右侧不允许浮动的元素</p>
+<h3 id="6-clear-属性"><a href="#6-clear-属性" class="headerlink" title="6. clear 属性"></a>6. <code>clear</code> 属性</h3><p>clear 属性指定段落的左侧或右侧不允许浮动的元素</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear: none | left | rignt | both | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106170537903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="7-叠放次序-z-index-属性">7. 叠放次序 <code>z-index</code> 属性</span></h3><p>拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面</p>
+<h3 id="7-叠放次序-z-index-属性"><a href="#7-叠放次序-z-index-属性" class="headerlink" title="7. 叠放次序 z-index 属性"></a>7. 叠放次序 <code>z-index</code> 属性</h3><p>拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z-index: auto | number | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106170718323.png#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="8-显示或隐藏-visibility-属性">8. 显示或隐藏 <code>visibility</code> 属性</span></h3><p>语法</p>
+<h3 id="8-显示或隐藏-visibility-属性"><a href="#8-显示或隐藏-visibility-属性" class="headerlink" title="8. 显示或隐藏 visibility 属性"></a>8. 显示或隐藏 <code>visibility</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visibility: visible | hidden | collapse | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106170848112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="9-object-fit-属性">9. <code>object-fit</code> 属性</span></h3><p>object-fit 属性指定元素的内容应该如何去适应指定容器的高度与宽度</p>
+<h3 id="9-object-fit-属性"><a href="#9-object-fit-属性" class="headerlink" title="9. object-fit 属性"></a>9. <code>object-fit</code> 属性</h3><p>object-fit 属性指定元素的内容应该如何去适应指定容器的高度与宽度</p>
 <p>object-fit 一般用于 img 和 video 标签，一般可以对这些元素进行保留原始比例的剪切、缩放或者直接进行拉伸等</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">object-fit: fill | contain | cover | scale-down | none | initial | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106171532756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="10-垂直对齐-vertical-align-属性">10. 垂直对齐 <code>vertical-align</code> 属性</span></h3><p>语法</p>
+<h3 id="10-垂直对齐-vertical-align-属性"><a href="#10-垂直对齐-vertical-align-属性" class="headerlink" title="10. 垂直对齐 vertical-align 属性"></a>10. 垂直对齐 <code>vertical-align</code> 属性</h3><p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align: baseline | sub | super | top | ...;</span><br></pre></td></tr></table></figure>
 <p>vertical-align 属性设置一个元素的垂直对齐方式。</p>
 <p>该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。允许指定负长度值和百分比值。这会使元素降低而不是升高。在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。<br><img src="https://img-blog.csdnimg.cn/20201106171634480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2><span id="四-弹性容器">四、弹性容器</span></h2><h3><span id="1-弹性容器声明">1. 弹性容器声明</span></h3><p>弹性盒子由<strong>弹性容器</strong>(Flex container)和<strong>弹性子元素</strong>(Flex item)组成。</p>
+<h2 id="四、弹性容器"><a href="#四、弹性容器" class="headerlink" title="四、弹性容器"></a>四、弹性容器</h2><h3 id="1-弹性容器声明"><a href="#1-弹性容器声明" class="headerlink" title="1. 弹性容器声明"></a>1. 弹性容器声明</h3><p>弹性盒子由<strong>弹性容器</strong>(Flex container)和<strong>弹性子元素</strong>(Flex item)组成。</p>
 <p>弹性容器通过设置 <code>display</code> 属性的值为 flex 或 inline-flex将其定义为弹性容器。</p>
 <p>弹性容器内包含了一个或多个弹性子元素。</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: flex | inline-flex;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>flex</code>: 将此元素声明为区块(block)层级的弹性容器</li>
-<li><code>inline-flex</code>: 将此元素声明为行内(inline)层级的弹性容器<h3><span id="2-版面方向-flex-direction-属性">2. 版面方向 <code>flex-direction</code> 属性</span></h3>语法</li>
+<li><code>inline-flex</code>: 将此元素声明为行内(inline)层级的弹性容器<h3 id="2-版面方向-flex-direction-属性"><a href="#2-版面方向-flex-direction-属性" class="headerlink" title="2. 版面方向 flex-direction 属性"></a>2. 版面方向 <code>flex-direction</code> 属性</h3>语法</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction: row | row-reverse | column | column-reverse</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>row</code>：横向从左到右排列（左对齐），默认的排列方式</li>
 <li><code>row-reverse</code>：反转横向排列（右对齐，从后往前排，最后一项排在最前面</li>
 <li><code>column</code>：纵向排列</li>
-<li><code>column-reverse</code>：反转纵向排列，从后往前排，最后一项排在最上面<h3><span id="3-多行排列-flex-wrap-属性">3. 多行排列 <code>flex-wrap</code> 属性</span></h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap: nowrap  |wrap | wrap-reverse | initial | inherit;</span><br></pre></td></tr></table></figure></li>
+<li><code>column-reverse</code>：反转纵向排列，从后往前排，最后一项排在最上面<h3 id="3-多行排列-flex-wrap-属性"><a href="#3-多行排列-flex-wrap-属性" class="headerlink" title="3. 多行排列 flex-wrap 属性"></a>3. 多行排列 <code>flex-wrap</code> 属性</h3>语法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap: nowrap  |wrap | wrap-reverse | initial | inherit;</span><br></pre></td></tr></table></figure></li>
 <li><code>nowrap</code>: 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器</li>
 <li><code>wrap</code>: 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行</li>
-<li><code>wrap-reverse</code>: 反转 wrap 排列<h3><span id="4-方向和行数简易表示法-flex-flow-属性">4. 方向和行数简易表示法 <code>flex-flow</code> 属性</span></h3>这是 <code>flex-direction</code> 和 <code>flex-wrap</code> 属性的简易表示法：</li>
+<li><code>wrap-reverse</code>: 反转 wrap 排列<h3 id="4-方向和行数简易表示法-flex-flow-属性"><a href="#4-方向和行数简易表示法-flex-flow-属性" class="headerlink" title="4. 方向和行数简易表示法 flex-flow 属性"></a>4. 方向和行数简易表示法 <code>flex-flow</code> 属性</h3>这是 <code>flex-direction</code> 和 <code>flex-wrap</code> 属性的简易表示法：</li>
 </ul>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-flow: flex-direction flex-wrap | initial | inherit;</span><br></pre></td></tr></table></figure>
-<h3><span id="5-排列顺序-order-属性">5. 排列顺序 <code>order</code> 属性</span></h3><p>默认排序按照元素在代码中出现的顺序排列，当元素设置order属性值后，排列时order较小者在前</p>
+<h3 id="5-排列顺序-order-属性"><a href="#5-排列顺序-order-属性" class="headerlink" title="5. 排列顺序 order 属性"></a>5. 排列顺序 <code>order</code> 属性</h3><p>默认排序按照元素在代码中出现的顺序排列，当元素设置order属性值后，排列时order较小者在前</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order: number | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>number</code>: 默认值为0，可为正整数<h3><span id="6-增加区块对象宽度-flex-grow-属性">6. 增加区块对象宽度 <code>flex-grow</code> 属性</span></h3>用于设置或检索弹性盒子元素的放大比例</li>
+<li><code>number</code>: 默认值为0，可为正整数<h3 id="6-增加区块对象宽度-flex-grow-属性"><a href="#6-增加区块对象宽度-flex-grow-属性" class="headerlink" title="6. 增加区块对象宽度 flex-grow 属性"></a>6. 增加区块对象宽度 <code>flex-grow</code> 属性</h3>用于设置或检索弹性盒子元素的放大比例</li>
 </ul>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-grow: number | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>number</code>: 默认值为0，是相对于其他版面区块元素的放大比例<h3><span id="7-缩减区块对象宽度-flex-shrink-属性">7. 缩减区块对象宽度 <code>flex-shrink</code> 属性</span></h3>用于设置或检索弹性盒子元素的缩小比例</li>
+<li><code>number</code>: 默认值为0，是相对于其他版面区块元素的放大比例<h3 id="7-缩减区块对象宽度-flex-shrink-属性"><a href="#7-缩减区块对象宽度-flex-shrink-属性" class="headerlink" title="7. 缩减区块对象宽度 flex-shrink 属性"></a>7. 缩减区块对象宽度 <code>flex-shrink</code> 属性</h3>用于设置或检索弹性盒子元素的缩小比例</li>
 </ul>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-shrink: number | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>number</code>: 默认值为0，是相对于其他版面区块元素的缩小比例<h3><span id="8-调整前区块宽度-flex-basis-属性">8. 调整前区块宽度 <code>flex-basis</code> 属性</span></h3>用于设置或检索弹性盒伸缩基准值，即设定浮动元素的宽度</li>
+<li><code>number</code>: 默认值为0，是相对于其他版面区块元素的缩小比例<h3 id="8-调整前区块宽度-flex-basis-属性"><a href="#8-调整前区块宽度-flex-basis-属性" class="headerlink" title="8. 调整前区块宽度 flex-basis 属性"></a>8. 调整前区块宽度 <code>flex-basis</code> 属性</h3>用于设置或检索弹性盒伸缩基准值，即设定浮动元素的宽度</li>
 </ul>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-basis: number | auto | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>number</code>: 按长度设定宽度</li>
-<li><code>auto</code>: 默认值，根据内容设定宽度<h3><span id="9-增减区块宽度简易表示法-flex-属性">9. 增减区块宽度简易表示法 <code>flex</code> 属性</span></h3>这是 <code>flex-grow</code> 、<code>flex-shrink</code> 和 <code>flex-basis</code> 属性的简易表示法：</li>
+<li><code>auto</code>: 默认值，根据内容设定宽度<h3 id="9-增减区块宽度简易表示法-flex-属性"><a href="#9-增减区块宽度简易表示法-flex-属性" class="headerlink" title="9. 增减区块宽度简易表示法 flex 属性"></a>9. 增减区块宽度简易表示法 <code>flex</code> 属性</h3>这是 <code>flex-grow</code> 、<code>flex-shrink</code> 和 <code>flex-basis</code> 属性的简易表示法：</li>
 </ul>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex: flex-grow flex-shrink flex-basis | auto | initial | inherit;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>auto</code>: 相当于 <code>flex-grow: 1</code> <code>flex-shrink: 1</code> <code>flex-basis: auto</code></li>
 </ul>
-<h3><span id="10-横向对齐-justify-content-属性">10. 横向对齐 <code>justify-content</code> 属性</span></h3><p>设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式</p>
+<h3 id="10-横向对齐-justify-content-属性"><a href="#10-横向对齐-justify-content-属性" class="headerlink" title="10. 横向对齐 justify-content 属性"></a>10. 横向对齐 <code>justify-content</code> 属性</h3><p>设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justify-content: flex-start | flex-end | center | space-between | space-around | initial | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106195347777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="11-行内纵向对齐-align-items-属性">11. 行内纵向对齐 <code>align-items</code> 属性</span></h3><p>设置或检索弹性盒子元素在flex容器的<strong>当前行</strong>的侧轴（纵轴）方向上的对齐方式</p>
+<h3 id="11-行内纵向对齐-align-items-属性"><a href="#11-行内纵向对齐-align-items-属性" class="headerlink" title="11. 行内纵向对齐 align-items 属性"></a>11. 行内纵向对齐 <code>align-items</code> 属性</h3><p>设置或检索弹性盒子元素在flex容器的<strong>当前行</strong>的侧轴（纵轴）方向上的对齐方式</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-items: stretch | center | flex-start | flex-end | baseline | initial | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106195605453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="12-重写-align-self-属性">12. 重写 <code>align-self</code> 属性</span></h3><p>align-self 属性定义flex子项<strong>单独</strong>在侧轴（纵轴）方向上的对齐方式。align-self 属性可<strong>重写</strong>该容器的 align-items 属性。</p>
+<h3 id="12-重写-align-self-属性"><a href="#12-重写-align-self-属性" class="headerlink" title="12. 重写 align-self 属性"></a>12. 重写 <code>align-self</code> 属性</h3><p>align-self 属性定义flex子项<strong>单独</strong>在侧轴（纵轴）方向上的对齐方式。align-self 属性可<strong>重写</strong>该容器的 align-items 属性。</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-self: auto | stretch | center | flex-start | flex-end | baseline | initial | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106200120568.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3><span id="13-纵向对齐-align-content-属性">13. 纵向对齐 <code>align-content</code> 属性</span></h3><p>在弹性容器内的各项没有占用交叉轴上所有可用的空间时对齐容器内的各项（垂直）。</p>
+<h3 id="13-纵向对齐-align-content-属性"><a href="#13-纵向对齐-align-content-属性" class="headerlink" title="13. 纵向对齐 align-content 属性"></a>13. 纵向对齐 <code>align-content</code> 属性</h3><p>在弹性容器内的各项没有占用交叉轴上所有可用的空间时对齐容器内的各项（垂直）。</p>
 <p>语法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-content: stretch | center | flex-start | flex-end | space-between | space-around | initial | inherit;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20201106200438788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDA1OTM4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
@@ -520,6 +520,12 @@
         
           
           
+            <a class="list-group-item" href="/2020/11/16/Sql%E8%AF%AD%E5%8F%A5%E5%9F%BA%E7%A1%80%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/"><i class="fa  fa-book"></i> Sql语句基础要点总结</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2020/11/16/HTML5%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> HTML5笔记</a>
             
           
@@ -543,11 +549,7 @@
           
         
           
-          
-            <a class="list-group-item" href="/2020/11/16/CSS3%E7%AC%94%E8%AE%B0(1)%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80+%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97+%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8+%E8%83%8C%E6%99%AF+%E8%A1%A8%E6%A0%BC+%E6%B8%90%E5%8F%98/"><i class="fa  fa-book"></i> CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变</a>
             
-          
-        
           
             
           
