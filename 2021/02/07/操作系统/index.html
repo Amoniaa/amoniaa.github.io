@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>操作系统课程复习 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="一、操作系统引论操作系统  定义： 一组能有效地组织和管理计算机硬件和软件资源、合理地对各类任务进行调度，以及方便用户使用的程序的集合 基本特征：并发，共享，虚拟，异步 功能：处理及管理，存储器管理，设备管理，文件管理，人机接口  多道程序系统：多个程序同时在内存中并发进行。由作业调度程序按一定的算法从后备队列选择若干作业调入内存，使其共享CPU和系统的各种资源  后备队列：用户所提交的程序先存放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统课程复习">
+<meta property="og:url" content="http://example.com/2021/02/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="一、操作系统引论操作系统  定义： 一组能有效地组织和管理计算机硬件和软件资源、合理地对各类任务进行调度，以及方便用户使用的程序的集合 基本特征：并发，共享，虚拟，异步 功能：处理及管理，存储器管理，设备管理，文件管理，人机接口  多道程序系统：多个程序同时在内存中并发进行。由作业调度程序按一定的算法从后备队列选择若干作业调入内存，使其共享CPU和系统的各种资源  后备队列：用户所提交的程序先存放">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2021-02-07T09:28:41.233Z">
+<meta property="article:modified_time" content="2021-02-21T08:31:49.610Z">
+<meta property="article:author" content="Amoniaa">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">操作系统课程复习</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2021-02-07
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~6.82K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h3 id="一、操作系统引论"><a href="#一、操作系统引论" class="headerlink" title="一、操作系统引论"></a>一、操作系统引论</h3><p><strong>操作系统</strong></p>
+<ul>
+<li><strong>定义</strong>： 一组能有效地组织和管理计算机硬件和软件资源、合理地对各类任务进行调度，以及方便用户使用的程序的集合</li>
+<li><strong>基本特征</strong>：并发，共享，虚拟，异步</li>
+<li><strong>功能</strong>：处理及管理，存储器管理，设备管理，文件管理，人机接口</li>
+</ul>
+<p><strong>多道程序系统</strong>：多个程序同时在内存中并发进行。由作业调度程序按一定的算法从后备队列选择若干作业调入内存，使其共享CPU和系统的各种资源</p>
+<ul>
+<li><p><strong>后备队列</strong>：用户所提交的程序先存放在外存上并排成一个队列，称为后备队列</p>
+</li>
+<li><p><strong>系统吞吐量</strong>：指从作业进入系统（后备队列）开始所完成的总量</p>
+</li>
+<li><p><strong>周转时间</strong>：指从作业进入系统开始，直至完成并退出系统为止所经历的时间</p>
+</li>
+</ul>
+<p><strong>分时系统的特征</strong>：多路性，独立性，及时性（响应时间），交互性</p>
+<p><strong>实时系统的特征</strong>：实时性，可靠性</p>
+<p><strong>并发</strong>：多个事件在同一时间段内发生</p>
+<p><strong>并行</strong>：多个事件在同一时刻发生</p>
+<p><strong>微内核结构</strong></p>
+<ul>
+<li><strong>应用场景</strong>：支持多处理机，适用于分布式系统环境</li>
+<li><strong>定义</strong>：精心设计的实现现代操作系统核心功能的小型内核，而并非一个完整的操作系统，仅为构建通用操作系统提供一个重要基础</li>
+<li><strong>服务方式</strong>：客户-服务器（C/S）模式</li>
+<li><strong>特征</strong>：以微内核为操作系统的核心，以C/S模式为基础，采用面向对象的程序设计方法</li>
+</ul>
+<p>【<strong>各种操作系统提出的目的</strong>】</p>
+<h3 id="二、进程的描述与控制"><a href="#二、进程的描述与控制" class="headerlink" title="二、进程的描述与控制"></a>二、进程的描述与控制</h3><p><strong>进程</strong></p>
+<ul>
+<li><strong>定义</strong>：是进程实体的运行过程，是系统进行资源分配和调度的一个基本单位</li>
+<li><strong>引入目的</strong>：使多个程序能够并发执行，以提高资源利用率和系统吞吐量</li>
+<li><strong>属性</strong>：操作系统拥有资源和独立运行的基本单位</li>
+<li><strong>进程实体</strong>：程序（数据段 + 程序段）+ 进程控制块（PCB）</li>
+<li><strong>PCB的作用</strong>：使多道系统中不能独立运行的程序，成为能够独立运行且能并发执行的进程。</li>
+<li><strong>特性</strong>：动态，并发，独立，异步</li>
+<li><strong>【进程和程序的区别与联系】</strong><ul>
+<li>结构上进程实体除了程序段和数据段外，还包含进程控制块PCB</li>
+<li>进程是程序的一次执行过程，具有动态，即由创建产生，调度执行，撤销消亡；程序具有静态性，是一组指令的有序结合</li>
+<li>多个进程实体能够同时在内存中并发执行，而程序的并发执行具有不可再现性，因此程序无法正确地并发执行</li>
+<li>进程是拥有资源和独立运行的基本单位，而程序无法在多道程序环境下独立运行</li>
+<li>进程和程序不一一对应：同一程序的一次或多次运行形成不同的进程，而一个进程在生命周期的不同阶段可以执行不同程序</li>
+</ul>
+</li>
+<li><strong>基本状态</strong>：就绪，执行，阻塞</li>
+<li><strong>相互转换</strong></li>
+<li><strong>阻塞</strong>：进程调用阻塞原语block将自己阻塞</li>
+<li><strong>唤醒</strong>：有关进程调用唤醒原语wakeup将等待该事件的进程唤醒，自己无法唤醒</li>
+</ul>
+<p><strong>进程同步</strong></p>
+<ul>
+<li><strong>主要任务</strong>：协调多个相关进程的执行次序，使并发执行的进程能按一定的规则或时许共享资源和相互合作，从而使程序的执行具有可再现性</li>
+<li><strong>临界资源</strong>：访问时进程间应采取互斥方式实现共享</li>
+<li><strong>临界区</strong><ul>
+<li><strong>定义</strong>：每个进程中访问临界资源的代码段</li>
+<li><strong>作用</strong>：保证各进程互斥地进入或执行自己的临界区，以实现对临界资源的互斥访问</li>
+</ul>
+</li>
+<li><strong>同步机制遵循的规则</strong>：空闲让进，忙则等待，有限等待，让权等待</li>
+</ul>
+<p><strong>信号量机制</strong></p>
+<ul>
+<li><strong>基本思想</strong><ul>
+<li>使用信号量标记临界资源是否被利用</li>
+<li>检查和释放信号量的任务由操作系统完成</li>
+<li>应用程序中可调用相应的原语，以完成对信号量的检查和释放</li>
+</ul>
+</li>
+<li><strong>应用</strong>：限制访问和协调进行</li>
+<li>【<strong>根据前驱图写代码描述</strong>】</li>
+<li>【<strong>进程同步问题</strong>】<ul>
+<li>司机和售票员</li>
+<li>生产者-消费者</li>
+<li>*<strong>哲学家进餐</strong></li>
+<li>读者-写者</li>
+<li>无死锁的哲学家进餐</li>
+<li>售票</li>
+<li>单行车道</li>
+<li>阅览室</li>
+<li>缓冲队列</li>
+</ul>
+</li>
+</ul>
+<p><strong>线程</strong></p>
+<ul>
+<li><strong>引入目的</strong>：减少程序在并发执行时所付出的时空开销，使操作系统有更好的并发性</li>
+<li><strong>属性</strong><ul>
+<li>轻型实体</li>
+<li>独立调度的基本单位</li>
+<li>可并发执行</li>
+<li>共享进程的资源</li>
+<li>可以创建或撤销另一个线程</li>
+</ul>
+</li>
+</ul>
+<p>*<em>【 * 线程和进程的区别与联系】*</em></p>
+<ul>
+<li><p>线程是调度和分派的基本单位，进程是拥有资源的基本单位</p>
+</li>
+<li><p>除必不可少的资源外，线程不拥有系统资源，但可以访问并获得其隶属进程的系统资源</p>
+</li>
+<li><p>支持多线程的操作系统中，不仅不同进程中的线程间可以并发，同一进程内的线程间也可以并发</p>
+</li>
+<li><p>进程具有独立性，独立地申请资源和运行，但同一进程内的多个线程共享进程的地址空间和其他资源，独立性较低</p>
+</li>
+<li><p>线程的系统开销很小，仅需要保存和设置少量信息，而进程切换时时空开销较大</p>
+</li>
+<li><p>线程和进程都支持多处理机系统</p>
+</li>
+</ul>
+<p><strong>【内核级线程和用户级线程的区别】</strong></p>
+<ul>
+<li>内核级线程有内核支持，而用户级线程无内核支持</li>
+<li>内核级线程调度一个应用程序中的多个线程同时在多个处理机上并行运行，从而提高执行速度和运行效率；而用户级线程一次只为一个进程分配一个处理器</li>
+<li>内核级线程的调度单位是线程，CPU执行时间多，切换速度较慢</li>
+<li>用户级线程的调度单位是进程，CPU执行时间少，切换速度较快</li>
+<li>系统调用时内核级线程仅阻塞该线程，而用户级进程阻塞整个进程</li>
+</ul>
+<h3 id="三、处理机调度与死锁"><a href="#三、处理机调度与死锁" class="headerlink" title="三、处理机调度与死锁"></a>三、处理机调度与死锁</h3><p><strong>作业调度算法</strong></p>
+<ul>
+<li><strong>先来先服务（FCFS）调度算法</strong></li>
+<li><strong>短作业优先（SJF）调度算法</strong></li>
+<li><strong>优先级（PSA）调度算法</strong></li>
+<li><strong>高响应比优先（HRRN）调度算法</strong></li>
+</ul>
+<p><strong>进程调度</strong></p>
+<ul>
+<li><strong>调度方式</strong><ul>
+<li><strong>抢占式</strong>：实时系统</li>
+<li><strong>非抢占式</strong>：批处理系统</li>
+</ul>
+</li>
+<li><strong>进程调度算法</strong><ul>
+<li><strong>先来先服务（FCFS）调度算法</strong></li>
+<li><strong>短进程优先（SPF）调度算法</strong></li>
+<li><strong>优先级（PSA）调度算法</strong></li>
+<li><strong>高响应比优先（HRRN）调度算法</strong></li>
+<li><strong>轮转（RR）调度算法</strong></li>
+<li><strong>多队列调度算法</strong></li>
+<li><strong>多级反馈队列调度算法</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>实时调度算法</strong></p>
+<ul>
+<li>最早截至时间优先（EDF）算法</li>
+<li>最低松弛度优先（LLF）算法</li>
+</ul>
+<p><strong>死锁</strong></p>
+<ul>
+<li><strong>起因</strong>：对不可抢占资源或可消耗资源的争夺</li>
+<li><strong>定义</strong>：若一组进行中的每一个进程都在等待仅有该组进程中的其他进程才能引发的事件，那么该组进程是死锁的</li>
+<li><strong>必要条件</strong>（需要同时满足）<ul>
+<li><strong>互斥</strong></li>
+<li><strong>请求和保持</strong></li>
+<li><strong>不可抢占</strong></li>
+<li><strong>循环等待</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>避免死锁</strong></p>
+<ul>
+<li><p><strong>安全序列</strong>：系统能按照某顺序为某进程分配所需资源，直至满足每个进程对资源的最大需求，使每个进程都可以顺利完成</p>
+</li>
+<li><p><strong>系统安全状态</strong>：能够找到一个安全序列，从而不会导致死锁的状态</p>
+</li>
+<li><p><strong>实质</strong>：系统在进行资源分配时，如何避免系统进入不安全状态</p>
+</li>
+<li><p><strong>【银行家算法】</strong></p>
+</li>
+<li><p><strong>【安全性算法】</strong></p>
+</li>
+</ul>
+<p><strong>死锁定理</strong>：当且仅当一个状态对应的资源分配图是不可简化的，此时为死锁状态</p>
+<p><strong>死锁的解除</strong>：</p>
+<ul>
+<li>抢占资源（资源争夺法）</li>
+<li>终止（撤销）进程</li>
+</ul>
+<h3 id="四、存储器管理"><a href="#四、存储器管理" class="headerlink" title="四、存储器管理"></a>四、存储器管理</h3><p><strong>单一连续分配</strong>（单道）：把内存分为系统区和用户区两部分</p>
+<p><strong>固定分区分配</strong>（多道）</p>
+<ul>
+<li><strong>基本思想</strong>：把用户区划分为若干大小固定的分区，每个分区只放一个进程，当一个分区空闲时，可以选择一个新进程进入该分区运行</li>
+<li><strong>划分分区的方法</strong><ul>
+<li><strong>分区大小相等</strong></li>
+<li><strong>分区大小不等</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>动态分区分配</strong>（可变分区分配）</p>
+<ul>
+<li><p><strong>数据结构</strong></p>
+<ul>
+<li>可变分区表</li>
+<li>可变分区链</li>
+</ul>
+</li>
+<li><p><strong>分配算法</strong></p>
+<ul>
+<li><strong>首次适应（FF）算法</strong></li>
+<li><strong>循环首次适应（NF）算法</strong></li>
+<li><strong>最佳适应（BF）算法</strong></li>
+<li><strong>最坏适应（WF）算法</strong></li>
+</ul>
+</li>
+<li><p><strong>内存回收</strong></p>
+<ul>
+<li>与前一个空闲分区邻接：修改前一分区大小</li>
+<li>与后一个空闲分区邻接：二者合并，新空闲分区大小为二者之和，回收区首址为新分区首址</li>
+<li>与前后两个空闲分区邻接：三者合并，大小为三者之和，使用前一个分区表项和首址，取消后一个分区表项</li>
+<li>不与前后两个空闲分区邻接：新空闲分区为回收区的表项和首址，插入到空闲分区链的适当位置</li>
+</ul>
+</li>
+</ul>
+<p><strong>动态可重定位分区分配</strong></p>
+<p><strong>分页存储管理</strong></p>
+<ul>
+<li><p><strong>页面</strong>：进程的逻辑地址空间分成若干大小相等的页，大小由机器地址结构决定</p>
+</li>
+<li><p><strong>物理块</strong>：把内存的存储空间划分为与页大小相等的块</p>
+</li>
+<li><p>注意</p>
+<ul>
+<li>分页由系统完成</li>
+<li>每一页的页内地址相对于0开始</li>
+<li>调度时，必须一次性地把进程的所有页装入内存的物理块中</li>
+</ul>
+</li>
+<li><p><strong>地址结构：页号+页内地址</strong></p>
+<ul>
+<li>页号和页内地址的划分由操作系统自动完成，对用户透明</li>
+</ul>
+<p>【<strong>页内地址和偏移量相关计算</strong>】</p>
+</li>
+<li><p><strong>地址变换机构</strong>：将逻辑地址<strong>重定位</strong>为物理地址</p>
+</li>
+<li><p>【<strong>快表原理</strong>】</p>
+<ol>
+<li><p>CPU给出有效地址后，地址变换机构自动将页号送入快表</p>
+</li>
+<li><p>将此页号与快表中所有页号比较：</p>
+<ul>
+<li>若有匹配页号=&gt;直接从快表中读出对应的物理块号=&gt;送入物理地址寄存器</li>
+<li>若无匹配页号=&gt;访问内存中的页表=&gt;将对应块号送入物理地址寄存器，同时将此页表项加入快表寄存器单元</li>
+</ul>
+</li>
+<li><p>若快表已满=&gt;操作系统找到一个最早的且不再需要的页表项换出                        </p>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>分段存储管理</strong></p>
+<ul>
+<li><p><strong>地址结构：段号+段内地址</strong></p>
+</li>
+<li><p>注意</p>
+<ul>
+<li>段和段之间可以不连续，但是每一段内的空间连续</li>
+<li>每一段大小可以不相等</li>
+</ul>
+</li>
+<li><p>【<strong>分页和分段的主要区别</strong>】</p>
+<ul>
+<li><p>页是信息的物理单位，分页由于系统管理的需要，为了消减内存碎片，提高内存利用率</p>
+<p>段是信息的逻辑单位，分段为了更好地满足用户的需要，段含有一组其意义相对完整的信息</p>
+</li>
+<li><p>页的大小固定，由系统决定，系统把逻辑地址划分为页号和页内地址，是由机器硬件实现，系统中只能有一种大小的页面</p>
+<p>段的长度不固定，取决于用户所编写的程序，其大小在编译时根据信息的性质划分</p>
+</li>
+<li><p>分页的作业地址空间是一维的，即单一的线性地址空间，只需记忆符表示一个地址</p>
+<p>分段的作业地址空间是二维的，既需要给出段名。又需给出段内地址 </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、虚拟存储器"><a href="#五、虚拟存储器" class="headerlink" title="五、虚拟存储器"></a>五、虚拟存储器</h3><p><strong>虚拟存储器</strong></p>
+<ul>
+<li><strong>定义</strong>：具有请求调入功能和置换功能，能从逻辑上扩充内存容量的一种存储器系统</li>
+<li><strong>逻辑容量 = 内存容量 + 外存容量</strong></li>
+<li><strong>最大容量</strong>：由计算机的地址结构决定</li>
+<li><strong>实现方法</strong><ul>
+<li>请求分页存储管理方式</li>
+<li>请求分段存储管理方式</li>
+<li>段页式虚拟存储管理方式</li>
+</ul>
+</li>
+</ul>
+<p><strong>请求分页存储管理方式</strong></p>
+<ul>
+<li><p><strong>与基本分页系统的异同</strong></p>
+</li>
+<li><p><strong>硬件支持</strong></p>
+<ul>
+<li>请求页表机制</li>
+<li>缺页中断机构</li>
+<li>地址变换机构</li>
+</ul>
+</li>
+<li><p>【<strong>缺页中断与一般中断的区别</strong>】</p>
+<ul>
+<li>缺页中断在指令执行期间产生和处理中断信号。通常，CPU只能在指令之间接受中断，而缺页中断在指令执行中间得到服务。即发现要访问的数据或指令不在内存时，立即产生缺页中断并进行处理</li>
+<li>一条指令可能引起多次不同的页面中断，系统中的硬件机制能够保存多次中断时的状态</li>
+</ul>
+</li>
+</ul>
+<p><strong>抖动</strong>（由于置换算法选择不当引起）：系统一直忙于页面的换入和换出，大部分CPU时间用于处理缺页中断和页面淘汰，很少顾及到用户进程的实际执行</p>
+<p><strong>页面置换算法</strong></p>
+<ul>
+<li><strong>最佳置换算法（Optimal）</strong></li>
+<li><strong>先进先出置换算法（FIFO）</strong></li>
+<li><strong>最近最久未使用置换算法（LRU）</strong></li>
+</ul>
+<p><strong>Belady现象</strong>：分配的页面数增多但缺页率反而提高的异常现象（FIFO存在这种现象）</p>
+<h3 id="六、输入输出系统"><a href="#六、输入输出系统" class="headerlink" title="六、输入输出系统"></a>六、输入输出系统</h3><p><strong>对I/O设备的控制方式</strong></p>
+<ul>
+<li><p><strong>使用轮询的可编程I/O方式（程序控制方式）</strong>忙—等待方式，CPU和设备串行工作</p>
+</li>
+<li><p><strong>使用中断的可编程I/O方式（中断驱动方式）</strong>CPU与IO设备并行工作，以字节为单位进行I/O</p>
+</li>
+<li><p><strong>直接存储器访问方式（DMA方式）</strong></p>
+</li>
+</ul>
+<p><strong>DMA与中断方式的区别</strong></p>
+<ul>
+<li><p><strong>中断的时机不同</strong></p>
+<ul>
+<li>中断方式是在数据寄存器满后，发中断请求，CPU进行中断处理<ul>
+<li>DMA方式是在所要求传送的数据块全部传送结束时要求CPU进行中断处理，大大减少了CPU进行中断处理的次数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>CPU控制方法不同</strong></p>
+<ul>
+<li><p>中断方式的数据传送是由CPU控制完成的</p>
+</li>
+<li><p>DMA方式是在DMA控制器的控制下不经CPU控制完成的</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>I/O通道控制方式</strong></p>
+<ul>
+<li><p><strong>通道</strong>：通过执行通道程序并与设备控制器共同实现对I/O设备控制</p>
+</li>
+<li><p><strong>瓶颈问题</strong>：通道价格昂贵，配备不可能太多，产生了I/O瓶颈</p>
+<p><strong>解决方法</strong>：增加设备到主机间的通路而不增加通道</p>
+</li>
+</ul>
+<p><strong>设备分配算法</strong></p>
+<ul>
+<li>先来先服务</li>
+<li>优先级高者优先</li>
+</ul>
+<p><strong>用户层的I/O软件</strong></p>
+<ul>
+<li><p><strong>Spooling技术（假脱机系统）</strong></p>
+<ul>
+<li><p><strong>目的</strong>：可以将一台物理设备虚拟为多台逻辑设备，以允许多个用户共享一台物理设备</p>
+</li>
+<li><p><strong>实质</strong>：模拟脱机输入/输出</p>
+</li>
+<li><p><strong>组成</strong>：必须建立在具有多道程序功能的OS上，有高速随机外存（通常为磁盘）的支持</p>
+<ul>
+<li><strong>输入井、输出井</strong><br>磁盘上的两块存储区，用于暂存输入、输出的数据</li>
+<li><strong>输入缓冲区、输出缓冲区</strong><br>位于内存中，作用是缓和CPU、设备之间的速度差异</li>
+<li><strong>输入进程、输出进程</strong><ul>
+<li>输入进程：利用输入缓冲区为中介，把输入设备的数据存入输入井</li>
+<li>输出进程：设备空闲时，将输出井中的数据利用输出缓冲区送入设备</li>
+</ul>
+</li>
+<li><strong>井管理程序</strong><br>控制任务与井之间信息的交换</li>
+</ul>
+</li>
+<li><p><strong>特征</strong></p>
+<ul>
+<li><strong>提高了I/O速度</strong></li>
+<li><strong>将独占设备改造为共享设备</strong></li>
+<li><strong>实现了虚拟设备功能</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  **Spooling技术提高了独占设备的利用率**</code></pre>
+<p>【<strong>缓冲区引入的原因</strong>】</p>
+<ul>
+<li>缓和CPU和I/O设备之间速度不匹配的矛盾</li>
+<li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
+<li>解决生产者和消费者之间数据粒度（单元大小）不匹配的问题</li>
+<li>提高CPU和I/O设备之间的并行性，提高系统的吞吐量和设备的利用率</li>
+</ul>
+<p><strong>缓冲区的类型</strong></p>
+<ul>
+<li><p><strong>单缓冲区</strong>：每当用户进程发出一次I/O请求时，OS便在<strong>内存中</strong>为之分配一个缓冲区</p>
+</li>
+<li><p><strong>双缓冲区</strong>：设备输入时，先将数据送入缓冲区1，装满后转向缓冲区2，此时OS可从缓冲区1中读取数据，并送入用户进程。</p>
+</li>
+<li><p><strong>环形缓冲区</strong>：多个缓冲区，多个指针</p>
+</li>
+<li><p>作为输入的缓冲区可设置三个指针</p>
+<ul>
+<li><strong>Nexti:</strong> 指示输入进程下次可用空缓冲区R</li>
+<li><strong>Nextg:</strong> 指示计算进程下一个可用缓冲区G</li>
+<li><strong>Current:</strong> 指示计算进程正使用的缓冲区C</li>
+</ul>
+</li>
+<li><p><strong>进程同步问题</strong>：使用输入循环缓冲，指针Nexti和指针Nextg将不断地沿着顺时针方向移动，这样就可能出现下述两种情况:</p>
+<ul>
+<li><p><strong>Nexti指针追赶上Nextg指针</strong></p>
+<ul>
+<li>表示输入数据的速度大于处理数据的速度，已无空缓冲区可用。</li>
+<li>此时，输入进程应阻塞，直到计算进程把某个缓冲区中的数据读取完，使之成为空缓冲区R，并调用Releasebuf过程将它释放时，才将输入进程唤醒。</li>
+<li>这种情况被称为<strong>系统受计算限制</strong></li>
+</ul>
+</li>
+<li><p><strong>Nextg指针追赶上Nexti指针</strong></p>
+<ul>
+<li>表示输入数据的速度低于处理数据的速度，此时无装满数据的缓冲区供计算进程使用。</li>
+<li>这时，计算进程只能阻塞，直至输入进程又装满某个缓冲区，并调用Releasebuf过程将它释放时，才去唤醒计算进程。</li>
+<li>这种情况被称为<strong>系统受I/O限制</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>缓冲池</strong></p>
+<ul>
+<li>缓冲区都是专用缓冲，是为完成某个任务专门开辟的。</li>
+<li>因此，任务较多时，开销会很大，而且利用率低。</li>
+<li>可以设立公用缓冲池，池中设立多个缓冲区，为<strong>多个进程</strong>共享，以提高利用率。</li>
+</ul>
+<p><strong>缓冲区、缓冲池的区别</strong></p>
+<ul>
+<li><strong>缓冲区</strong>：单个内存区域或一组内存区域组成的链表</li>
+<li><strong>缓冲池</strong>：包含一个管理的数据结构、一组操作函数的管理机制，用于管理多个缓冲区</li>
+</ul>
+<p><strong>磁盘存储器的管理</strong></p>
+<p>​    目前几乎所有的机械式硬盘都以“温彻斯特”技术为基本原理</p>
+<p><strong>磁盘的组织和格式</strong></p>
+<ul>
+<li><p>磁盘包括一或多个<strong>物理盘片</strong>。</p>
+</li>
+<li><p>每个盘片分一个或两个<strong>存储面</strong>。</p>
+</li>
+<li><p>每个面被组织成若干同心环，这种环称为<strong>磁道</strong>(track)，磁道之间留有<strong>间隙</strong>(gap)。为使处理简单，磁道上可存储的字节数目是相同的。</p>
+</li>
+<li><p>磁道又被逻辑上划分成若干<strong>扇区</strong>(sector) 。扇区之间保留一定的间隙。</p>
+</li>
+<li><p>一个扇区称为一个<strong>盘块</strong>(或数据块) </p>
+<p>磁盘上存储的<strong>数据块数目</strong>是由<strong>扇区数</strong>、磁道数以及<strong>磁盘面数</strong>所决定的</p>
+<p>（为充分利用磁盘外面磁道的存储能力，现代磁盘不再把内外磁道划分为相同数目的扇区，而是利用外层磁道容量较大的特点，将盘面划分成若干环带，同一环带内的所有磁道具有相同的扇区数。显然，外层环带的磁道拥有更多的扇区）</p>
+</li>
+</ul>
+<p>【<strong>磁盘调度算法</strong>】</p>
+<ul>
+<li><p><strong>先来先服务(FCFS)</strong></p>
+</li>
+<li><p><strong>最短寻道时间优先(SSTF)算法</strong></p>
+</li>
+<li><p><strong>扫描(SCAN)算法</strong></p>
+</li>
+<li><p><strong>循环扫描(CSCAN)算法</strong></p>
+</li>
+</ul>
+<h3 id="七、文件管理"><a href="#七、文件管理" class="headerlink" title="七、文件管理"></a>七、文件管理</h3><p><strong>数据组</strong></p>
+<ul>
+<li>数据项</li>
+<li>记录</li>
+<li>文件</li>
+</ul>
+<p><strong>文件</strong></p>
+<ul>
+<li><p><strong>定义</strong>：由创建者所定义的，具有文件名的一组相关元素的集合</p>
+</li>
+<li><p><strong>分类</strong></p>
+<ul>
+<li><strong>有结构文件（记录式文件）</strong>：数据结构、数据库</li>
+<li><strong>无结构文件（流式文件）</strong>：源程序、可执行文件、库函数</li>
+</ul>
+</li>
+<li><p><strong>类型</strong></p>
+<ul>
+<li>按用途分类<ul>
+<li>系统文件</li>
+<li>用户文件</li>
+<li>库文件  </li>
+</ul>
+</li>
+<li>按文件中数据的形式分类 <ul>
+<li>源文件</li>
+<li>目标文件</li>
+<li>可执行文件 </li>
+</ul>
+</li>
+<li>按存取控制属性分类<ul>
+<li>只执行文件</li>
+<li>只读文件</li>
+<li>读写文件</li>
+</ul>
+</li>
+</ul>
+<p><strong>某些系统，如UNIX等，把I/O设备设为特殊文件</strong></p>
+</li>
+<li><p><strong>文件操作</strong></p>
+<p>①<strong>创建文件</strong></p>
+<p>②<strong>删除文件</strong></p>
+<p>③<strong>读文件</strong></p>
+<p>④<strong>写文件</strong></p>
+<p>⑤<strong>截断文件</strong></p>
+<p>⑥<strong>设置文件的读/写位置</strong></p>
+<p>⑦<strong>文件的“打开”和“关闭”操作</strong></p>
+</li>
+</ul>
+<p><strong>索引文件</strong></p>
+<ul>
+<li><p><strong>目的</strong>：使变长记录文件可以直接存取</p>
+</li>
+<li><p><strong>存在的问题</strong>：存储量比较大，每个记录都要建索引</p>
+</li>
+</ul>
+<p><strong>文件目录</strong></p>
+<ul>
+<li><strong>定义</strong>：是一种数据结构，用于标识系统中的文件及其物理地址，供检索文件时使用</li>
+<li><strong>要求</strong>：<ul>
+<li> <strong>实现按名存取</strong>，只提供文件名，便可快速找到文件在外存上的位置</li>
+<li><strong>提高对目录的检索速度</strong></li>
+<li><strong>文件共享</strong></li>
+<li><strong>允许文件重名</strong>，允许不同用户对不同文件使用相同的文件名</li>
+</ul>
+</li>
+</ul>
+<p><strong>文件目录形式</strong></p>
+<ul>
+<li><strong>单级文件目录</strong><ul>
+<li><strong>含义</strong>：系统中仅一张目录表，每个文件一个目录项</li>
+<li><strong>优点</strong>：简单，能实现目录管理的基本功能—<strong>按名存取</strong></li>
+<li><strong>缺点</strong><ul>
+<li>查找速度慢：特别是大文件系统</li>
+<li>不允许重名</li>
+<li>不便于实现文件共享：不同用户不能用不同名字访问同一个文件，不灵活</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>两级文件目录</strong><ul>
+<li><strong>含义</strong>：为每个用户再建立一个单独的用户文件目录 (UFD)</li>
+<li><strong>优点</strong><ul>
+<li>提高了检索目录的速度 </li>
+<li>不同用户目录中，可以使用相同的文件名</li>
+<li>不同用户还可使用不同的文件名来访问系统中的同一个共享文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2021/02/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2021/02/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/";
+            const title         = "「操作系统课程复习」";
+            const excerpt       = `一、操作系统引论操作系统
+
+定义： 一组能有效地组织和管理计算机硬件和软件资源、合理地对各类任务进行调度，以及方便用户使用的程序的集合
+基本特征：并发，共享，虚拟，异步
+功能：处理及管理，存储器管理，设备管理，文件管理，人机接口
+
+多...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-02-21</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变" href="/2021/02/07/CSS3笔记(1)——基础+段落文字+项目列表+背景+表格+渐变/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center">千帆过尽，归来仍是少年</p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/07/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/"><i class="fa  fa-book"></i> 响应式网页设计实战</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/07/HTML5%E7%AC%94%E8%AE%B0/"><i class="fa  fa-book"></i> HTML5笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/07/CSS3%E7%AC%94%E8%AE%B0(4)%E2%80%94%E2%80%94%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88%E5%BD%A2%E7%8A%B6+%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/"><i class="fa  fa-book"></i> CSS3笔记(4)——鼠标指针形状+响应式网页设计</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/07/CSS3%E7%AC%94%E8%AE%B0(3)%E2%80%94%E2%80%94%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C+%E5%8A%A8%E7%94%BB+%E5%8F%98%E5%BD%A2/"><i class="fa  fa-book"></i> CSS3笔记(3)——过渡效果+动画+变形</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/07/CSS3%E7%AC%94%E8%AE%B0(2)%E2%80%94%E2%80%94%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B+%E5%A4%9A%E6%A0%8F+%E5%AE%9A%E4%BD%8D+%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8/"><i class="fa  fa-book"></i> CSS3笔记(2)——盒子模型+多栏+定位+弹性容器</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
