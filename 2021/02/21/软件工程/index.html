@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>软件工程复习 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="软件工程" />
+  
+  <meta name="description" content="第一章  软件工程学概述P1 软件危机的概念在计算机软件的开发和维护过程中所遇到的一系列严重问题 P9，软件工程方法学分为两种： 传统方法学  面向对象方法学   P16，瀑布模型 优点：强迫开发人员采用规范的方法（结构化技术），严格规定了每个阶段必须提交的文档，要求每个阶段交出的所有产品必须经过质量保证小组的仔细验证 缺点：瀑布模型是由文档驱动的这个事实也是它的一个主要缺点。 仅仅通过写在纸上的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程复习">
+<meta property="og:url" content="http://example.com/2021/02/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="第一章  软件工程学概述P1 软件危机的概念在计算机软件的开发和维护过程中所遇到的一系列严重问题 P9，软件工程方法学分为两种： 传统方法学  面向对象方法学   P16，瀑布模型 优点：强迫开发人员采用规范的方法（结构化技术），严格规定了每个阶段必须提交的文档，要求每个阶段交出的所有产品必须经过质量保证小组的仔细验证 缺点：瀑布模型是由文档驱动的这个事实也是它的一个主要缺点。 仅仅通过写在纸上的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2021-02-21T09:35:34.000Z">
+<meta property="article:modified_time" content="2021-02-21T10:03:21.539Z">
+<meta property="article:author" content="Amoniaa">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>我的</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">软件工程复习</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2021-02-21
+                        <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.63K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2 id="第一章-软件工程学概述"><a href="#第一章-软件工程学概述" class="headerlink" title="第一章  软件工程学概述"></a>第一章  软件工程学概述</h2><h4 id="P1-软件危机的概念"><a href="#P1-软件危机的概念" class="headerlink" title="P1 软件危机的概念"></a>P1 软件危机的概念</h4><p>在计算机软件的开发和维护过程中所遇到的一系列严重问题</p>
+<h4 id="P9，软件工程方法学分为两种："><a href="#P9，软件工程方法学分为两种：" class="headerlink" title="P9，软件工程方法学分为两种："></a>P9，软件工程方法学分为两种：</h4><ul>
+<li><p>传统方法学</p>
+</li>
+<li><p>面向对象方法学</p>
+</li>
+</ul>
+<h4 id="P16，瀑布模型"><a href="#P16，瀑布模型" class="headerlink" title="P16，瀑布模型"></a>P16，瀑布模型</h4><ul>
+<li><strong>优点：</strong>强迫开发人员采用规范的方法（结构化技术），严格规定了每个阶段必须提交的文档，要求每个阶段交出的所有产品必须经过质量保证小组的仔细验证</li>
+<li><strong>缺点：瀑布模型是由文档驱动的</strong>这个事实也是它的一个主要缺点。<ul>
+<li>仅仅通过写在纸上的静态的规格说明，很难全面正确地认识动态的软件产品</li>
+<li>几乎完全依赖于书面的规格说明，很可能导致最终开发出来的软件产品不能真正地满足用户的需要</li>
+</ul>
+</li>
+</ul>
+<h4 id="P19，螺旋模型的基本思想："><a href="#P19，螺旋模型的基本思想：" class="headerlink" title="P19，螺旋模型的基本思想："></a>P19，螺旋模型的基本思想：</h4><p>使用<strong>原型</strong>及其他方法来尽量<strong>降低风险</strong>，可以把它看成在每个阶段之前都增加了<strong>风险分析</strong>过程的<strong>快速原型模型</strong></p>
+<h4 id="P25，敏捷过程开发宣言由4个简单的价值观声明组成【掌握】"><a href="#P25，敏捷过程开发宣言由4个简单的价值观声明组成【掌握】" class="headerlink" title="P25，敏捷过程开发宣言由4个简单的价值观声明组成【掌握】"></a>P25，敏捷过程开发宣言由4个简单的价值观声明组成【掌握】</h4><ul>
+<li>个体和交互胜过过程和工具</li>
+<li>可以工作的软件胜过面面俱到的文档</li>
+<li>客户合作胜过合同谈判</li>
+<li>响应变化胜过遵循计划</li>
+</ul>
+<h2 id="第二章-可行性研究"><a href="#第二章-可行性研究" class="headerlink" title="第二章  可行性研究"></a>第二章  可行性研究</h2><h4 id="P38，系统流程图"><a href="#P38，系统流程图" class="headerlink" title="P38，系统流程图"></a>P38，系统流程图</h4><p><strong>概念：</strong>系统流程图是概括地描绘物理系统的传统工具。</p>
+<p>它的<strong>基本思想</strong>是用图形符号以黑盒子形式描绘组成系统的每个部件（程序、文档、数据库、人工过程等）。</p>
+<h4 id="P40，数据流图（DFD"><a href="#P40，数据流图（DFD" class="headerlink" title="P40，数据流图（DFD)"></a>P40，数据流图（DFD)</h4><p><strong>概念：</strong>数据流图是一种图形化技术，它描绘信息流和数据从输入移动到输出的过程中所经受的变换。</p>
+<p>在数据流图中没有任何具体的物理部件，它只是描绘数据在软件中流动和被处理的逻辑过程。</p>
+<p> <strong>数据流图的四种符号</strong></p>
+<ul>
+<li>正方形或立方体——数据的源点或终点</li>
+<li>圆角矩形或圆形——变换数据的处理</li>
+<li>开口矩形或两条平行横线——数据存储</li>
+<li>箭头——数据流</li>
+</ul>
+<h4 id="P47，数据流图和数据字典共同构成系统的逻辑模型，没有数据字典，数据流图就不严格；没有数据流图，数据字典也难以发挥作用。"><a href="#P47，数据流图和数据字典共同构成系统的逻辑模型，没有数据字典，数据流图就不严格；没有数据流图，数据字典也难以发挥作用。" class="headerlink" title="P47，数据流图和数据字典共同构成系统的逻辑模型，没有数据字典，数据流图就不严格；没有数据流图，数据字典也难以发挥作用。"></a>P47，数据流图和数据字典共同构成系统的逻辑模型，没有数据字典，数据流图就不严格；没有数据流图，数据字典也难以发挥作用。</h4><h4 id="P47，数据字典【描述一个系统-软件，会画数据字典-改编例子】"><a href="#P47，数据字典【描述一个系统-软件，会画数据字典-改编例子】" class="headerlink" title="P47，数据字典【描述一个系统/软件，会画数据字典/改编例子】"></a><strong>P47，数据字典</strong>【描述一个系统/软件，会画数据字典/改编例子】</h4><h2 id="第三章-需求分析"><a href="#第三章-需求分析" class="headerlink" title="第三章  需求分析"></a>第三章  需求分析</h2><h4 id="P58，访谈是最早开始使用的获取用户需求的技术，也是迄今为止仍然广泛使用的需求分析技术。"><a href="#P58，访谈是最早开始使用的获取用户需求的技术，也是迄今为止仍然广泛使用的需求分析技术。" class="headerlink" title="P58，访谈是最早开始使用的获取用户需求的技术，也是迄今为止仍然广泛使用的需求分析技术。"></a>P58，访谈是最早开始使用的获取用户需求的技术，也是迄今为止仍然广泛使用的需求分析技术。</h4><h4 id="P62，需求分析阶段，首先要创建分析模型，还应该写出软件的需求规格说明书，它是需求分析阶段得出的最主要的文档。"><a href="#P62，需求分析阶段，首先要创建分析模型，还应该写出软件的需求规格说明书，它是需求分析阶段得出的最主要的文档。" class="headerlink" title="P62，需求分析阶段，首先要创建分析模型，还应该写出软件的需求规格说明书，它是需求分析阶段得出的最主要的文档。"></a>P62，需求分析阶段，首先要创建分析模型，还应该写出软件的需求规格说明书，它是需求分析阶段得出的最主要的文档。</h4><h4 id="P64，实体-联系图（ER图）中包含实体（数据对象）、关系和属性3种基本成分。"><a href="#P64，实体-联系图（ER图）中包含实体（数据对象）、关系和属性3种基本成分。" class="headerlink" title="P64，实体-联系图（ER图）中包含实体（数据对象）、关系和属性3种基本成分。"></a>P64，实体-联系图（ER图）中包含实体（数据对象）、关系和属性3种基本成分。</h4><ul>
+<li>矩形框——实体</li>
+<li>菱形框——关系</li>
+<li>椭圆形或圆角矩形——实体（或关系）的属性</li>
+<li>直线——连接实体（或关系）与其属性</li>
+</ul>
+<h4 id="P70，从哪四个方面验证软件需求的正确性"><a href="#P70，从哪四个方面验证软件需求的正确性" class="headerlink" title="P70，从哪四个方面验证软件需求的正确性"></a>P70，从哪四个方面验证软件需求的正确性</h4><ul>
+<li>一致性</li>
+<li>完整性</li>
+<li>现实性</li>
+<li>有效性</li>
+</ul>
+<h2 id="第五章-总体设计"><a href="#第五章-总体设计" class="headerlink" title="第五章  总体设计"></a>第五章  总体设计</h2><h4 id="P91，总体设计过程由2个主要阶段组成："><a href="#P91，总体设计过程由2个主要阶段组成：" class="headerlink" title="P91，总体设计过程由2个主要阶段组成："></a>P91，总体设计过程由2个主要阶段组成：</h4><ul>
+<li><p>系统设计阶段——确定系统的具体实现方案</p>
+</li>
+<li><p>结构设计阶段——确定软件结构</p>
+</li>
+</ul>
+<h4 id="P94，软件设计中应遵循的基本原理（5个）"><a href="#P94，软件设计中应遵循的基本原理（5个）" class="headerlink" title="P94，软件设计中应遵循的基本原理（5个）"></a>P94，软件设计中应遵循的基本原理（5个）</h4><ul>
+<li><strong>模块化</strong></li>
+<li><strong>抽象</strong></li>
+<li><strong>逐步求精</strong></li>
+<li><strong>信息隐藏和局部化</strong></li>
+<li><strong>模块独立</strong></li>
+</ul>
+<h4 id="P95，模块化的好处。【不需要背，但是大体能判断哪些是好处】"><a href="#P95，模块化的好处。【不需要背，但是大体能判断哪些是好处】" class="headerlink" title="P95，模块化的好处。【不需要背，但是大体能判断哪些是好处】"></a>P95，模块化的好处。【不需要背，但是大体能判断哪些是好处】</h4><p>采用模块化原理，可以</p>
+<ul>
+<li>使软件结构清晰，容易设计、阅读和理解</li>
+<li>使软件容易测试和调试，有助于提高软件可靠性</li>
+<li>能够提高软件的可修改性</li>
+<li>有助于软件开发工程的组织管理</li>
+</ul>
+<h4 id="P98，设计的原则是高内聚，低耦合。同时要知道，内聚的七种类型，耦合的四种。内聚、耦合的高低。"><a href="#P98，设计的原则是高内聚，低耦合。同时要知道，内聚的七种类型，耦合的四种。内聚、耦合的高低。" class="headerlink" title="P98，设计的原则是高内聚，低耦合。同时要知道，内聚的七种类型，耦合的四种。内聚、耦合的高低。"></a>P98，设计的原则是高内聚，低耦合。同时要知道，内聚的七种类型，耦合的四种。内聚、耦合的高低。</h4><p>模块的独立程度可由两个定性标准度量：</p>
+<ul>
+<li><p><strong>内聚</strong></p>
+<ul>
+<li><strong>含义：</strong>标志着一个模块内各个元素彼此结合的紧密程度，是信息隐藏和局部化概念的自然扩展</li>
+<li><strong>分类：</strong><ul>
+<li>低内聚：<strong>偶然内聚【最低】 &lt; 逻辑内聚 &lt; 时间内聚</strong></li>
+<li>中内聚：<strong>过程内聚 &lt; 通信内聚</strong></li>
+<li>高内聚：<strong>顺序内聚 &lt; 功能内聚</strong>【最高】</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>耦合</strong></p>
+<ul>
+<li><strong>含义：</strong>是对一个软件结构内不同模块间互联程度的度量，其强度取决于模块间接口的复杂程度，进入或访问一个模块的点，以及通过接口的数据</li>
+<li><strong>分类：</strong><ul>
+<li><strong>数据耦合：</strong>两个模块彼此间通过参数交换信息，信息仅仅是数据【低耦合】</li>
+<li><strong>控制耦合：</strong>传递的信息中有控制信息【中等耦合】</li>
+<li><strong>特征耦合：</strong>整个数据结构作为参数传递，但被调用的模块只需要使用其中一部分数据元素</li>
+<li><strong>公共环境耦合：</strong>两个或多个模块通过一个公共数据环境作用</li>
+<li><strong>内容耦合：</strong>【耦合度最高】</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="P104，面向数据流的设计方法，七个步骤。【书中的例子要看懂，一定要掌握】【大题】"><a href="#P104，面向数据流的设计方法，七个步骤。【书中的例子要看懂，一定要掌握】【大题】" class="headerlink" title="P104，面向数据流的设计方法，七个步骤。【书中的例子要看懂，一定要掌握】【大题】"></a>P104，面向数据流的设计方法，七个步骤。【书中的例子要看懂，一定要掌握】【大题】</h4><ul>
+<li>复查基本系统模型</li>
+<li>复查并精化数据流图</li>
+<li>确定数据流图具有变换特性还是事务特性</li>
+<li>确定输入流和输出流的边界，从而孤立出变换中心</li>
+<li>完成第一级分解</li>
+<li>完成第二级分解</li>
+<li>使用设计度量和启发式规则，对第一次分割得到的软件结构进一步精化</li>
+</ul>
+<p>【见附录1】</p>
+<h2 id="第六章-详细设计"><a href="#第六章-详细设计" class="headerlink" title="第六章  详细设计"></a>第六章  详细设计</h2><h4 id="P117，详细设计阶段的根本目标是确定怎样具体地实现所要求的系统，也就是说，经过这个阶段的工作，应该得出对目标系统的精确描述，从而在编码阶段可以把这个描述直接翻译成用某种程序设计语言写的程序。"><a href="#P117，详细设计阶段的根本目标是确定怎样具体地实现所要求的系统，也就是说，经过这个阶段的工作，应该得出对目标系统的精确描述，从而在编码阶段可以把这个描述直接翻译成用某种程序设计语言写的程序。" class="headerlink" title="P117，详细设计阶段的根本目标是确定怎样具体地实现所要求的系统，也就是说，经过这个阶段的工作，应该得出对目标系统的精确描述，从而在编码阶段可以把这个描述直接翻译成用某种程序设计语言写的程序。"></a>P117，详细设计阶段的根本目标是确定怎样具体地实现所要求的系统，也就是说，经过这个阶段的工作，应该得出对目标系统的精确描述，从而在编码阶段可以把这个描述直接翻译成用某种程序设计语言写的程序。</h4><h4 id="P117，1966年B和J证明了只用三种基本的控制结构就能实现任何单入口单出口的程序：顺序，选择和循环。"><a href="#P117，1966年B和J证明了只用三种基本的控制结构就能实现任何单入口单出口的程序：顺序，选择和循环。" class="headerlink" title="P117，1966年B和J证明了只用三种基本的控制结构就能实现任何单入口单出口的程序：顺序，选择和循环。"></a>P117，1966年B和J证明了只用三种基本的控制结构就能实现任何单入口单出口的程序：顺序，选择和循环。</h4><h4 id="P119，人机界面设计是接口设计的一个重要的组成部分。对于交互式系统来说，人机界面设计和数据设计、体系结构设计及过程设计一样重要。"><a href="#P119，人机界面设计是接口设计的一个重要的组成部分。对于交互式系统来说，人机界面设计和数据设计、体系结构设计及过程设计一样重要。" class="headerlink" title="P119，人机界面设计是接口设计的一个重要的组成部分。对于交互式系统来说，人机界面设计和数据设计、体系结构设计及过程设计一样重要。"></a>P119，人机界面设计是接口设计的一个重要的组成部分。对于交互式系统来说，人机界面设计和数据设计、体系结构设计及过程设计一样重要。</h4><h4 id="P124，程序流程图又称为程序框图，是历史最悠久，使用最广泛的描述过程设计的方法，然而也是使用最为混乱的一个方法。"><a href="#P124，程序流程图又称为程序框图，是历史最悠久，使用最广泛的描述过程设计的方法，然而也是使用最为混乱的一个方法。" class="headerlink" title="P124，程序流程图又称为程序框图，是历史最悠久，使用最广泛的描述过程设计的方法，然而也是使用最为混乱的一个方法。"></a>P124，程序流程图又称为程序框图，是历史最悠久，使用最广泛的描述过程设计的方法，然而也是使用最为混乱的一个方法。</h4><ul>
+<li><strong>优点：</strong>对控制流程地描绘很直观，便于初学者掌握</li>
+<li><strong>主要缺点</strong>：<ul>
+<li>程序流程图本质上不是逐步求精的好工具，它诱使程序员过早地考虑程序地控制流程，而不去考虑程序的全局结构</li>
+<li>程序流程图中用箭头代表控制流，因此程序员不受任何约束，可以完全不顾结构程序设计的精神，随意转移控制</li>
+<li>程序流程图不易表示数据结构</li>
+</ul>
+</li>
+</ul>
+<h4 id="P125，由于要有一种不允许违背结构程序设计精神的图形工具的考虑，N和S提出了盒图，又叫做N-S图，严格遵循结构程序设计精神"><a href="#P125，由于要有一种不允许违背结构程序设计精神的图形工具的考虑，N和S提出了盒图，又叫做N-S图，严格遵循结构程序设计精神" class="headerlink" title="P125，由于要有一种不允许违背结构程序设计精神的图形工具的考虑，N和S提出了盒图，又叫做N-S图，严格遵循结构程序设计精神"></a>P125，由于要有一种不允许违背结构程序设计精神的图形工具的考虑，N和S提出了盒图，又叫做N-S图，严格遵循结构程序设计精神</h4><h4 id="P137，程序复杂度的度量，-McCabe方法，三种方法度量程序的环形复杂度。"><a href="#P137，程序复杂度的度量，-McCabe方法，三种方法度量程序的环形复杂度。" class="headerlink" title="P137，程序复杂度的度量， McCabe方法，三种方法度量程序的环形复杂度。"></a>P137，程序复杂度的度量， McCabe方法，三种方法度量程序的环形复杂度。</h4><p>【见附录2】</p>
+<h2 id="第七章-实现"><a href="#第七章-实现" class="headerlink" title="第七章  实现"></a>第七章  实现</h2><h4 id="P150，软件测试的目标：发现程序中的错误。从心理学角度看，由程序的编写者自己进行测试是不合适的。因此，在综合测试阶段经常由其他人员组成的测试小组来完成测试工作。"><a href="#P150，软件测试的目标：发现程序中的错误。从心理学角度看，由程序的编写者自己进行测试是不合适的。因此，在综合测试阶段经常由其他人员组成的测试小组来完成测试工作。" class="headerlink" title="P150，软件测试的目标：发现程序中的错误。从心理学角度看，由程序的编写者自己进行测试是不合适的。因此，在综合测试阶段经常由其他人员组成的测试小组来完成测试工作。"></a>P150，软件测试的目标：发现程序中的错误。从心理学角度看，由程序的编写者自己进行测试是不合适的。因此，在综合测试阶段经常由其他人员组成的测试小组来完成测试工作。</h4><h4 id="P151，黑盒和白盒测试的基本概念。"><a href="#P151，黑盒和白盒测试的基本概念。" class="headerlink" title="P151，黑盒和白盒测试的基本概念。"></a>P151，黑盒和白盒测试的基本概念。</h4><ul>
+<li><p><strong>黑盒测试法</strong>把程序看作一个黑盒子，完全不考虑程序的内部结构和处理过程。</p>
+</li>
+<li><p><strong>白盒测试法</strong>把程序看成装在一个透明的白盒子里，测试者完全知道程序的结构和处理算法。</p>
+</li>
+</ul>
+<h4 id="软件测试步骤"><a href="#软件测试步骤" class="headerlink" title="软件测试步骤"></a>软件测试步骤</h4><ul>
+<li>模块测试</li>
+<li>子系统测试</li>
+<li>系统测试</li>
+<li>验收测试</li>
+<li>平行运行</li>
+</ul>
+<h4 id="模块测试，把每个模块作为一个单独的实体来测试，目的是保证每个模块作为一个单元能正确运行，因此，模块测试又被称为单元测试。"><a href="#模块测试，把每个模块作为一个单独的实体来测试，目的是保证每个模块作为一个单元能正确运行，因此，模块测试又被称为单元测试。" class="headerlink" title="模块测试，把每个模块作为一个单独的实体来测试，目的是保证每个模块作为一个单元能正确运行，因此，模块测试又被称为单元测试。"></a>模块测试，把每个模块作为一个单独的实体来测试，目的是保证每个模块作为一个单元能正确运行，因此，模块测试又被称为单元测试。</h4><h4 id="P153，单元测试从五个方面进行【注意区分哪个是最重要的】"><a href="#P153，单元测试从五个方面进行【注意区分哪个是最重要的】" class="headerlink" title="P153，单元测试从五个方面进行【注意区分哪个是最重要的】"></a>P153，单元测试从五个方面进行【注意区分哪个是最重要的】</h4><ul>
+<li>模块接口</li>
+<li>局部数据结构</li>
+<li>重要的执行通路</li>
+<li>出错处理通路</li>
+<li>边界条件【最后的且可能是<strong>最重要</strong>的任务】</li>
+</ul>
+<h4 id="P157，自顶向下集成，需要存根模块。"><a href="#P157，自顶向下集成，需要存根模块。" class="headerlink" title="P157，自顶向下集成，需要存根模块。"></a>P157，自顶向下集成，需要存根模块。</h4><p><strong>自顶向下集成方法是一个日益为人们广泛采用的测试和组装软件的途径。</strong></p>
+<p>从主控制开始，沿着程序的控制层次向下移动，逐渐地把各个模块结合起来。在把附属于（及最终附属于）主控制模块的那些模块组装到程序结构中时，或者使用<strong>深度优先</strong>的策略，或者使用<strong>宽度优先</strong>的策略。</p>
+<h4 id="P162，白盒测试中的逻辑覆盖【需要知道有哪几种，哪个最强，哪个最弱】"><a href="#P162，白盒测试中的逻辑覆盖【需要知道有哪几种，哪个最强，哪个最弱】" class="headerlink" title="P162，白盒测试中的逻辑覆盖【需要知道有哪几种，哪个最强，哪个最弱】"></a>P162，白盒测试中的逻辑覆盖【需要知道有哪几种，哪个最强，哪个最弱】</h4><ul>
+<li>语句覆盖</li>
+<li>判定覆盖</li>
+<li>条件覆盖</li>
+<li>判定/条件覆盖</li>
+<li>条件组合覆盖</li>
+<li>点覆盖</li>
+<li>边覆盖</li>
+<li>路径覆盖</li>
+</ul>
+<p><strong>强弱关系：</strong></p>
+<ul>
+<li><strong>条件组合 &gt; 条件 &gt; 判定 &gt; 语句</strong> </li>
+<li><strong>判定/条件</strong> 不一定比 <strong>条件覆盖</strong> 强</li>
+<li><strong>点覆盖</strong>标准和<strong>语句覆盖</strong>标准相同</li>
+<li><strong>边覆盖</strong>和<strong>判定覆盖</strong>一致</li>
+</ul>
+<h2 id="第八章-维护"><a href="#第八章-维护" class="headerlink" title="第八章  维护"></a>第八章  维护</h2><h4 id="P189，软件维护的基本定义。"><a href="#P189，软件维护的基本定义。" class="headerlink" title="P189，软件维护的基本定义。"></a>P189，软件维护的基本定义。</h4><p>软件维护是指，在软件已经交付使用后，为了改正错误或满足新的需要而修改软件的过程</p>
+<h4 id="P194，决定软件可维护性的因素【背熟】"><a href="#P194，决定软件可维护性的因素【背熟】" class="headerlink" title="P194，决定软件可维护性的因素【背熟】"></a>P194，决定软件可维护性的因素【背熟】</h4><ul>
+<li>可理解性</li>
+<li>可测试性</li>
+<li>可修改性</li>
+<li>可移植性</li>
+<li>可重用性</li>
+</ul>
+<h2 id="第九章-面向对象方法学引论"><a href="#第九章-面向对象方法学引论" class="headerlink" title="第九章  面向对象方法学引论"></a>第九章  面向对象方法学引论</h2><h4 id="P208，面向对象方法学开发的软件可维护性好的因素【背熟】"><a href="#P208，面向对象方法学开发的软件可维护性好的因素【背熟】" class="headerlink" title="P208，面向对象方法学开发的软件可维护性好的因素【背熟】"></a>P208，面向对象方法学开发的软件可维护性好的因素【背熟】</h4><p>面向对象的软件：</p>
+<ul>
+<li><p>稳定性比较好</p>
+</li>
+<li><p>比较容易修改</p>
+</li>
+<li><p>比较容易理解</p>
+</li>
+<li><p>易于测试和调试</p>
+</li>
+</ul>
+<h4 id="P211，面向对象的基本概念：类，实例，消息，方法，属性，封装，继承，多态性，重载。"><a href="#P211，面向对象的基本概念：类，实例，消息，方法，属性，封装，继承，多态性，重载。" class="headerlink" title="P211，面向对象的基本概念：类，实例，消息，方法，属性，封装，继承，多态性，重载。"></a>P211，面向对象的基本概念：类，实例，消息，方法，属性，封装，继承，多态性，重载。</h4><p><strong>对象：</strong>是具有相同<strong>状态</strong>的一组操作的集合</p>
+<p><strong>类：</strong>对具有相同<strong>数据</strong>和相同<strong>操作</strong>的一组相似<strong>对象</strong>的定义，是对具有相同<strong>属性</strong>和<strong>行为</strong>的一个或多个对象的描述</p>
+<p><strong>实例：</strong>由某个<strong>特定</strong>的类所描述的一个<strong>具体</strong>的对象</p>
+<p><strong>消息：</strong>要求某个对象执行在定义它的那个类中所定义的某个操作的规格说明</p>
+<p><strong>方法：方法是对象所执行的操作，也就是类中所定义的服务。方法描述了对象执行操作的算法，响应消息的方法。</strong></p>
+<p><strong>属性：</strong>是类中所定义的<strong>数据</strong>，是对客观世界实体所具有的性质的<strong>抽象</strong></p>
+<p><strong>封装：</strong>把<strong>数据</strong>和<strong>实现操作的代码</strong>集中起来放在对象内部</p>
+<p><strong>继承：继承是指子类自动地共享基类中定义的数据和方法的机制</strong></p>
+<p><strong>多态性：</strong>接口的多种不同的实现方式即为<strong>多态</strong>，子类对象可以像父类对象那样使用。在类的不同层级中可以共享一个行为（方法）的名字，然而不同层次中每个类各自按自己的需要实现这个行为。当对象收到发送给它的消息时，根据该对象所属于的类动态地选用在该类中定义的实现算法</p>
+<p><strong>重载</strong>：</p>
+<ul>
+<li><strong>函数重载：</strong>在同一作用域内的若干参数特征不同的函数可以使用相同的函数名字</li>
+<li><strong>运算符重载：</strong>同一个运算符可以施加于不同类型的操作数上面</li>
+</ul>
+<p>当参数不同或被操作数的类型不同时，实现函数的算法或运算符的语义是不相同的</p>
+<h2 id="第十三章-软件项目管理"><a href="#第十三章-软件项目管理" class="headerlink" title="第十三章  软件项目管理"></a>第十三章  软件项目管理</h2><h4 id="P305，软件项目管理从一组项目计划活动开始，制定计划的基础是工作量估算和完成期限估算。为了估算项目的工作量和完成期限，首先需要估算软件的规模。"><a href="#P305，软件项目管理从一组项目计划活动开始，制定计划的基础是工作量估算和完成期限估算。为了估算项目的工作量和完成期限，首先需要估算软件的规模。" class="headerlink" title="P305，软件项目管理从一组项目计划活动开始，制定计划的基础是工作量估算和完成期限估算。为了估算项目的工作量和完成期限，首先需要估算软件的规模。"></a>P305，软件项目管理从一组项目计划活动开始，制定计划的基础是工作量估算和完成期限估算。为了估算项目的工作量和完成期限，首先需要估算软件的规模。</h4><h4 id="代码行技术是比较简单的定量估算软件规模的方法。"><a href="#代码行技术是比较简单的定量估算软件规模的方法。" class="headerlink" title="代码行技术是比较简单的定量估算软件规模的方法。"></a>代码行技术是比较简单的定量估算软件规模的方法。</h4><h4 id="P320，民主制程序员组的主要优点和缺点。【记熟】"><a href="#P320，民主制程序员组的主要优点和缺点。【记熟】" class="headerlink" title="P320，民主制程序员组的主要优点和缺点。【记熟】"></a>P320，民主制程序员组的主要优点和缺点。【记熟】</h4><ul>
+<li><strong>优点：</strong><ul>
+<li>小组规模小，可以减少通信问题</li>
+<li>容易确定小组的质量标准</li>
+<li>组员关系密切，能够相互学习</li>
+<li>组员们对发现的程序错误持积极态度，有助于更快地发现错误，产生高质量的代码</li>
+<li>组员们享有充分民主，小组有高凝聚力，组内学术氛围浓厚，有利于攻克技术难关</li>
+</ul>
+</li>
+<li><strong>缺点：</strong>由于没有明确的权威指导开发工程的进行，组内间缺乏必要的协调，最终可能导致工程失败</li>
+<li><strong>民主制程序员组适用于开发有较高难度的软件工程</strong></li>
+</ul>
+<h3 id="图的概念"><a href="#图的概念" class="headerlink" title="图的概念"></a>图的概念</h3><h4 id="第二章-可行性研究-1"><a href="#第二章-可行性研究-1" class="headerlink" title="第二章 可行性研究"></a>第二章 可行性研究</h4><ul>
+<li>2.3 <strong>系统流程图：</strong>是概括地描绘物理系统的传统工具。</li>
+<li>2.4 <strong>数据流图（DFD图）</strong>数据流图是一种图形化技术，它描绘信息流和数据从输入移动到输出的过程中所经受的变换</li>
+</ul>
+<h4 id="第三章-需求分析-1"><a href="#第三章-需求分析-1" class="headerlink" title="第三章 需求分析"></a>第三章 需求分析</h4><ul>
+<li>3.4 <strong>实体-联系图（ER图）：</strong>提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型</li>
+<li>3.6 <strong>状态转换图：</strong>通过描绘系统的状态及引起系统状态转换的事件，表示系统的行为</li>
+</ul>
+<h4 id="第五章-总体设计-1"><a href="#第五章-总体设计-1" class="headerlink" title="第五章 总体设计"></a>第五章 总体设计</h4><h5 id="5-4-描绘软件结构的图形工具"><a href="#5-4-描绘软件结构的图形工具" class="headerlink" title="5.4 描绘软件结构的图形工具"></a>5.4 描绘软件结构的图形工具</h5><ul>
+<li>5.4 <strong>HIPO图：</strong>在层次结构图的基础上推出的一种描述系统结构和模块内部处理功能的工具</li>
+<li>5.4 <strong>结构图：</strong>描绘软件结构的图形工具</li>
+</ul>
+<h4 id="第六章-详细设计-1"><a href="#第六章-详细设计-1" class="headerlink" title="第六章 详细设计"></a>第六章 详细设计</h4><h5 id="6-3-过程设计的工具"><a href="#6-3-过程设计的工具" class="headerlink" title="6.3 过程设计的工具"></a>6.3 过程设计的工具</h5><ul>
+<li>6.3 <strong>盒图（N-S图）</strong>是结构化编程中的一种可视化建模，严格遵循结构程序设计精神</li>
+<li>6.3 <strong>问题分析图（PAD图）：</strong>使用二维树形结构的图表示程序的控制流</li>
+<li>6.3 <strong>PDL</strong>：过程设计语言，也成为伪码，是用正文形式表示数据和处理过程的设计工具<h5 id="6-4-面向数据结构的设计方法"><a href="#6-4-面向数据结构的设计方法" class="headerlink" title="6.4 面向数据结构的设计方法"></a>6.4 面向数据结构的设计方法</h5></li>
+<li>6.4 <strong>Jackson图</strong>：便于表示层次结构，而且是对结构进行自顶向下分解的有力工具</li>
+</ul>
+<h4 id="第九章-面向对象方法学引论-1"><a href="#第九章-面向对象方法学引论-1" class="headerlink" title="第九章 面向对象方法学引论"></a>第九章 面向对象方法学引论</h4><h5 id="9-6-功能模型"><a href="#9-6-功能模型" class="headerlink" title="9.6  功能模型"></a>9.6  功能模型</h5><ul>
+<li>9.6 <strong>用例图：</strong>呈现了一些参与者，一些用例，以及它们之间的关系，主要用于对系统、子系统或类的功能行为进行建模</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2021/02/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2021/02/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/";
+            const title         = "「软件工程复习」";
+            const excerpt       = `第一章  软件工程学概述P1 软件危机的概念在计算机软件的开发和维护过程中所遇到的一系列严重问题
+P9，软件工程方法学分为两种：
+传统方法学
+
+面向对象方法学
+
+
+P16，瀑布模型
+优点：强迫开发人员采用规范的方法（结构化技术），严格...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag">软件工程</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-02-21</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" Final Cut Pro学习笔记" href="/2021/02/08/fcp/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 操作系统课程复习" href="/2021/02/21/操作系统/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center">千帆过尽，归来仍是少年</p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+  <aside id="krw-categories" class="widget widget-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%AA%E8%BE%91/">剪辑</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a><span class="category-list-count">2</span></li></ul>
+  </aside>
+
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/CSS/" style="font-size: 0.73em;">CSS</a> <a href="/tags/FCPX/" style="font-size: 0.6em;">FCPX</a> <a href="/tags/HTML/" style="font-size: 0.6em;">HTML</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.8em;">前端</a> <a href="/tags/%E5%89%AA%E8%BE%91/" style="font-size: 0.67em;">剪辑</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 0.6em;">软件工程</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><i class="fa  fa-book"></i> 操作系统课程复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa  fa-book"></i> 软件工程复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/08/fcp/"><i class="fa  fa-book"></i> Final Cut Pro学习笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/01/30/%E5%89%AA%E8%BE%91%E7%9A%84%E8%AF%AD%E6%B3%95/"><i class="fa  fa-book"></i> 《剪辑的语法》读书笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/05/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/"><i class="fa  fa-book"></i> 响应式网页设计实战</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>

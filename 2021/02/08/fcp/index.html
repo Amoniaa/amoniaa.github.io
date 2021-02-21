@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>Final Cut Pro学习笔记 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="FCPX, 剪辑" />
+  
+  <meta name="description" content="将视频片段添加到时间线：IO确定范围，E添加L向前播放，K暂停，J向后播放，两下L快进按Q，素材添加到视频时间线上方按W，素材 添加到视频中间E：导入素材D：替换 切割删除：选择片段边缘，英文输入法状态下，按住”,”或”.”，延长或缩短片段，加按shift可以一次10帧的速度快速变化按住B切割，然后松开，依然是选择工具光标放在切割点，command+B快速切割范围选择工具：按下R不松，选中片段光标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Final Cut Pro学习笔记">
+<meta property="og:url" content="http://example.com/2021/02/08/fcp/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="将视频片段添加到时间线：IO确定范围，E添加L向前播放，K暂停，J向后播放，两下L快进按Q，素材添加到视频时间线上方按W，素材 添加到视频中间E：导入素材D：替换 切割删除：选择片段边缘，英文输入法状态下，按住”,”或”.”，延长或缩短片段，加按shift可以一次10帧的速度快速变化按住B切割，然后松开，依然是选择工具光标放在切割点，command+B快速切割范围选择工具：按下R不松，选中片段光标">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2021-02-08T11:51:43.000Z">
+<meta property="article:modified_time" content="2021-02-21T10:04:27.984Z">
+<meta property="article:author" content="Amoniaa">
+<meta property="article:tag" content="FCPX">
+<meta property="article:tag" content="剪辑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>我的</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Final Cut Pro学习笔记</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2021-02-08
+                        <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E5%89%AA%E8%BE%91/">剪辑</a>
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~2.10K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E8%A7%86%E9%A2%91%E7%89%87%E6%AE%B5%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">将视频片段添加到时间线：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%89%B2%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">切割删除：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">时间线：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E9%A2%91%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">音频：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%B9%95%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">字幕：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%9C%BA%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">转场：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">导出：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">8.</span> <span class="toc-text">补充：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-number">9.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">9.1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-number">9.2.</span> <span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A0%E6%9D%90%E7%AE%A1%E7%90%86"><span class="toc-number">9.3.</span> <span class="toc-text">素材管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%AD%E6%94%BE"><span class="toc-number">9.4.</span> <span class="toc-text">播放</span></a></li></ol></li></ol>
+                    </div>
+                
+                <hr />
+                <h3 id="将视频片段添加到时间线："><a href="#将视频片段添加到时间线：" class="headerlink" title="将视频片段添加到时间线："></a>将视频片段添加到时间线：</h3><p>IO确定范围，E添加<br>L向前播放，K暂停，J向后播放，两下L快进<br><strong>按Q，素材添加到视频时间线上方</strong><br><strong>按W，素材 添加到视频中间</strong><br>E：导入素材<br>D：替换</p>
+<h3 id="切割删除："><a href="#切割删除：" class="headerlink" title="切割删除："></a>切割删除：</h3><p>选择片段边缘，英文输入法状态下，按住”,”或”.”，延长或缩短片段，加按shift可以一次10帧的速度快速变化<br>按住B切割，然后松开，依然是选择工具<br>光标放在切割点，command+B快速切割<br>范围选择工具：按下R不松，选中片段<br>光标放在切割点，<strong>option+[**，快速</strong>删除光标左边的片段**<br>option+command+delete，删除主时间线片段的同时，不影响上下方的素材</p>
+<h3 id="时间线："><a href="#时间线：" class="headerlink" title="时间线："></a>时间线：</h3><p>command+R 视频上方弹出速度条，将光标放到边缘进行拖移，改变片段播放速度。点击速度旁边的小箭头可以精确调速。shift+B可以分区调整速度。<br>ctrl+R渲染所选部分<br>剪辑完成后，文件，删除生成的片段，减小硬盘空间占用<br>command+/-调整时间线大小<br>shift+Z 完整的时间线<br>快捷键：<br>M标记<br>N吸附<br>command+Z 撤销上一步</p>
+<h3 id="音频："><a href="#音频：" class="headerlink" title="音频："></a>音频：</h3><p>音频两端时间点，向内拖动——渐弱<br>用R选中部分音频，上下拖拽，调节局部音量大小<br>整条时间线，control+/-，精确调节音量大小<br>一般来说，音量在-6和0之间</p>
+<h3 id="字幕："><a href="#字幕：" class="headerlink" title="字幕："></a>字幕：</h3><p>光标右边，shift+Q光标左边<br>使用R框选片段，使用Q自动匹配字幕长度<br>在检查器中可以双击编辑字幕，按下回车是换行，command+回车退出编辑<br>control+T，基本字幕</p>
+<h3 id="转场："><a href="#转场：" class="headerlink" title="转场："></a>转场：</h3><p>双击自动添加，片段两侧均有，选择片段边缘，仅添加到片段一侧。快捷键command+T。</p>
+<h3 id="导出："><a href="#导出：" class="headerlink" title="导出："></a>导出：</h3><p>command+E，母版文件，设置，解码器“H.264”，仅存储，导出格式为mov<br>导出mp4：格式“电脑”，编码器“H.264较好质量”<br>添加目的位置，对母版文件默认进行修改。</p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>选中资源库无法拖入素材，应该选中事件</p>
+<p>如果选中了片段的一部分，按住option+X可以取消选择，然后单击选择整个片段</p>
+<p>多选多轨素材，右键可以新建复合片段，还可以组合视频和音频</p>
+<p>按住option拖拽字幕，可以复制，但是修改会影响全部，应该右键在浏览器中显示，菜单栏选择编辑，复制片段，此时修改不会影响全部</p>
+<p>编辑-&gt;添加静帧；而shift+H：添加静帧，更加方便由于片段没有被切开</p>
+<p>主时间线有磁力吸附，但是其他时间线默认没有。此时可以多选多段素材，右键创建故事情节(command+G)，点击此故事情节上面的灰色横条，拖动可以移动整条时间线</p>
+<p>使用快捷键T拖动光标，可以调整两个片段之间的切入点</p>
+<p>默认只在主时间上粘贴（command+V）可以使用option+ V，粘贴为连接片段</p>
+<p>在时间线最前面插入发生器：空隙（Option+ W），选择空隙，control+D，输入1，设定时长为1，然后将音乐移动到最前面</p>
+<p>option+command+delete，无视吸附的连接删除被吸附的片段，保留所吸附的片段</p>
+<p>调整变速而又不影响片段长度，可以右键从故事情节中提取（option+command+上），此时可以根据下方的空隙长度调整片段速度，最后右键，覆盖至主要故事情节</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>选中一个片段的开头或结尾，把鼠标放到目标位置，Shift+X：延长编辑</p>
+<p>方向键上/下：切割点切换（shift以10帧为单位）</p>
+<p>方向键左/右：左右移动</p>
+<p>command+option+点击吸附片段：更改吸附点</p>
+<p>option+W：添加空隙</p>
+<p>shift+delete：替换空隙</p>
+<p>接合连续的片段：菜单-&gt;修剪-&gt;接和片段</p>
+<p>按住·删除，可以保留吸附的片段（option+command+delete，删除主时间线片段的同时，不影响上下方的素材）</p>
+<p>按住·或使用范围选择工具可以解除吸附的限制</p>
+<p>范围选择状态下，X：全选</p>
+<p>control+E：精确度编辑器</p>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>command+option+E：添加默认音频效果</p>
+<p>加色模式：去掉黑色</p>
+<p>减色模式：去掉白色</p>
+<p>Alpha通道模版：类似剪切蒙版</p>
+<p>停用：V</p>
+<p>control+T：添加默认字幕</p>
+<p>添加关键帧：在视频动画面板（control+V打开），按住option，点击时间线即可添加，或使用option+K</p>
+<p>拷贝关键帧：option+shift+C</p>
+<p>调出时间码：control+D</p>
+<p>添加默认转场：command+T</p>
+<p>添加默认效果：Option+E</p>
+<p>效果：信箱模式：可以添加画面遮幅</p>
+<p>效果：删减：可以添加马赛克或局部模糊</p>
+<p>风格化：简单边框、照片回忆</p>
+<p>option拖动：可以复制片段</p>
+<p><strong>复制粘贴属性：command+C，Shift+Command+V</strong></p>
+<p>M添加标记，可以在索引删除标记，或使用control+M删除标记</p>
+<h4 id="素材管理"><a href="#素材管理" class="headerlink" title="素材管理"></a>素材管理</h4><p>F：添加到个人收藏</p>
+<p>U：取消个人收藏</p>
+<p><strong>shift+F：定位选中的当前媒体位置</strong></p>
+<p>command+K：关键词管理器，1～9:添加对应关键词；0:删除关键词</p>
+<h4 id="播放"><a href="#播放" class="headerlink" title="播放"></a>播放</h4><p>command+L：循环播放</p>
+<p>I O /：播放所选片段</p>
+<p>J：倒放</p>
+<p>L：快放</p>
+<p>真正的复制：将项目复制为快照 和 菜单-&gt;片段-&gt;引用新的父片段</p>
+<p><strong>motion：P29、P31、P32、P60</strong></p>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2021/02/08/fcp/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2021/02/08/fcp/";
+            const title         = "「Final Cut Pro学习笔记」";
+            const excerpt       = `将视频片段添加到时间线：IO确定范围，E添加L向前播放，K暂停，J向后播放，两下L快进按Q，素材添加到视频时间线上方按W，素材 添加到视频中间E：导入素材D：替换
+切割删除：选择片段边缘，英文输入法状态下，按住”,”或”.”，延长或缩...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/FCPX/" rel="tag">FCPX</a>, <a class="tag-none-link" href="/tags/%E5%89%AA%E8%BE%91/" rel="tag">剪辑</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-02-21</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 《剪辑的语法》读书笔记" href="/2021/01/30/剪辑的语法/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 软件工程复习" href="/2021/02/21/软件工程/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E8%A7%86%E9%A2%91%E7%89%87%E6%AE%B5%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">将视频片段添加到时间线：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%89%B2%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">切割删除：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">时间线：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E9%A2%91%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">音频：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%B9%95%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">字幕：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%9C%BA%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">转场：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">导出：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">8.</span> <span class="toc-text">补充：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-number">9.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">9.1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-number">9.2.</span> <span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A0%E6%9D%90%E7%AE%A1%E7%90%86"><span class="toc-number">9.3.</span> <span class="toc-text">素材管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%AD%E6%94%BE"><span class="toc-number">9.4.</span> <span class="toc-text">播放</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+  <aside id="krw-categories" class="widget widget-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%AA%E8%BE%91/">剪辑</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a><span class="category-list-count">2</span></li></ul>
+  </aside>
+
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/CSS/" style="font-size: 0.73em;">CSS</a> <a href="/tags/FCPX/" style="font-size: 0.6em;">FCPX</a> <a href="/tags/HTML/" style="font-size: 0.6em;">HTML</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.8em;">前端</a> <a href="/tags/%E5%89%AA%E8%BE%91/" style="font-size: 0.67em;">剪辑</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 0.6em;">软件工程</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><i class="fa  fa-book"></i> 操作系统课程复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><i class="fa  fa-book"></i> 软件工程复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/08/fcp/"><i class="fa  fa-book"></i> Final Cut Pro学习笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/01/30/%E5%89%AA%E8%BE%91%E7%9A%84%E8%AF%AD%E6%B3%95/"><i class="fa  fa-book"></i> 《剪辑的语法》读书笔记</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/05/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/"><i class="fa  fa-book"></i> 响应式网页设计实战</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
