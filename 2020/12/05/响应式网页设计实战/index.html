@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://example.com/2020/12/05/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/index.html">
 <meta property="og:site_name" content="Amoniaa">
 <meta property="og:description" content="1.设计思路在本响应式网页设计中，通过媒体查询 @media 规则，使网页自适应不同浏览设备的屏幕宽度。网页中 &lt;header&gt; 位于网页顶端， &lt;footer&gt; 位于网页底端， 二者不论在哪一种情况下，其宽度总是为浏览窗口宽度的100%，而 &lt;nav&gt; 、&lt;article&gt; 和 &lt;aside&gt; 根据不同浏览窗口的大小自适应其宽度，并以不">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2020-12-05T10:12:57.000Z">
 <meta property="article:modified_time" content="2021-02-21T10:02:56.439Z">
@@ -128,7 +128,7 @@
                 <h1 class="kratos-entry-title text-center">响应式网页设计实战</h1>
                 
                 <div class="kratos-post-meta text-center">
-                    <span>
+                    <span id="/2020/12/05/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/" class="leancloud_visitors" data-flag-title="响应式网页设计实战">
                         <i class="fa fa-calendar"></i> 2020-12-05
                         <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                         <i class="fa fa-user"></i> 作者 Amoniaa
@@ -138,6 +138,8 @@
                             ~5.53K
                         
                         字
+                        
+                            <i class="fa fa-eye"></i> 阅读 <span class="leancloud-visitors-count"></span> 次
                         
                     </span>
                 </div>
@@ -264,6 +266,33 @@
                 
             </nav>
         
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'J263hmeplj7v3rhr5KTFquV6-gzGzoHsz',
+                appKey: 'ThINFPG4XRBduN5f6fGE2T8j',
+                visitor: true,
+                enableQQ: false,
+                path: '/2020/12/05/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98/'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+
+    // 因为Valine涉及到访问统计的内容，所以不能使用lazyload，因而在此处就直接加载了
+    window.requestIdleCallback(load_comm);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </article>
 </section>

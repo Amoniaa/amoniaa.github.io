@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://example.com/2021/03/07/Javascript%20%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Amoniaa">
 <meta property="og:description" content="一、简单数据类型1.声明变量特殊情况   情况 说明 结果    var age ; console.log (age); 只声明 不赋值 undefined   console.log(age); 不声明 不赋值 直接使用 报错   age &#x3D; 10; console.log (age); 不声明 只赋值 10   2.Undefined 和 Null一个声明后没有被赋值的变量会有一个默认值 u">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-03-07T03:15:07.000Z">
 <meta property="article:modified_time" content="2021-03-12T06:20:04.131Z">
@@ -128,7 +128,7 @@
                 <h1 class="kratos-entry-title text-center">JavaScript 基础</h1>
                 
                 <div class="kratos-post-meta text-center">
-                    <span>
+                    <span id="/2021/03/07/Javascript%20%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="JavaScript 基础">
                         <i class="fa fa-calendar"></i> 2021-03-07
                         <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                         <i class="fa fa-user"></i> 作者 Amoniaa
@@ -138,6 +138,8 @@
                             ~16.70K
                         
                         字
+                        
+                            <i class="fa fa-eye"></i> 阅读 <span class="leancloud-visitors-count"></span> 次
                         
                     </span>
                 </div>
@@ -457,6 +459,33 @@ console.log(age);
                 
             </nav>
         
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'J263hmeplj7v3rhr5KTFquV6-gzGzoHsz',
+                appKey: 'ThINFPG4XRBduN5f6fGE2T8j',
+                visitor: true,
+                enableQQ: false,
+                path: '/2021/03/07/Javascript%20%E5%9F%BA%E7%A1%80/'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+
+    // 因为Valine涉及到访问统计的内容，所以不能使用lazyload，因而在此处就直接加载了
+    window.requestIdleCallback(load_comm);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </article>
 </section>

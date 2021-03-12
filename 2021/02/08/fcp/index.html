@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://example.com/2021/02/08/fcp/index.html">
 <meta property="og:site_name" content="Amoniaa">
 <meta property="og:description" content="将视频片段添加到时间线：IO确定范围，E添加L向前播放，K暂停，J向后播放，两下L快进按Q，素材添加到视频时间线上方按W，素材 添加到视频中间E：导入素材D：替换 切割删除：选择片段边缘，英文输入法状态下，按住”,”或”.”，延长或缩短片段，加按shift可以一次10帧的速度快速变化按住B切割，然后松开，依然是选择工具光标放在切割点，command+B快速切割范围选择工具：按下R不松，选中片段光标">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-02-08T11:51:43.000Z">
 <meta property="article:modified_time" content="2021-02-21T10:04:27.984Z">
@@ -128,7 +128,7 @@
                 <h1 class="kratos-entry-title text-center">Final Cut Pro学习笔记</h1>
                 
                 <div class="kratos-post-meta text-center">
-                    <span>
+                    <span id="/2021/02/08/fcp/" class="leancloud_visitors" data-flag-title="Final Cut Pro学习笔记">
                         <i class="fa fa-calendar"></i> 2021-02-08
                         <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E5%89%AA%E8%BE%91/">剪辑</a>
                         <i class="fa fa-user"></i> 作者 Amoniaa
@@ -138,6 +138,8 @@
                             ~2.10K
                         
                         字
+                        
+                            <i class="fa fa-eye"></i> 阅读 <span class="leancloud-visitors-count"></span> 次
                         
                     </span>
                 </div>
@@ -314,6 +316,33 @@
                 
             </nav>
         
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'J263hmeplj7v3rhr5KTFquV6-gzGzoHsz',
+                appKey: 'ThINFPG4XRBduN5f6fGE2T8j',
+                visitor: true,
+                enableQQ: false,
+                path: '/2021/02/08/fcp/'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+
+    // 因为Valine涉及到访问统计的内容，所以不能使用lazyload，因而在此处就直接加载了
+    window.requestIdleCallback(load_comm);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </article>
 </section>
