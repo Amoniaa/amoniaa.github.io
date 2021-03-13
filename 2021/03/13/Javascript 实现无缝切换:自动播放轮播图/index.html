@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>Javascript 实现无缝切换/自动播放轮播图 | Amoniaa</title>
+  <meta name="author" content="Amoniaa" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Javascript, 前端" />
+  
+  <meta name="description" content="一、功能需求 鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮。 点击右侧按钮一次，图片往左播放一张，以此类推， 左侧按钮同理。 图片播放的同时，下面小圆圈模块跟随一起变化。 点击小圆圈，可以播放相应图片。 鼠标不经过轮播图， 轮播图也会自动播放图片。 鼠标经过，轮播图模块， 自动播放停止。二、实现思路1.整体分析 此时需要添加 load 事件。 鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 实现无缝切换&#x2F;自动播放轮播图">
+<meta property="og:url" content="http://example.com/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Amoniaa">
+<meta property="og:description" content="一、功能需求 鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮。 点击右侧按钮一次，图片往左播放一张，以此类推， 左侧按钮同理。 图片播放的同时，下面小圆圈模块跟随一起变化。 点击小圆圈，可以播放相应图片。 鼠标不经过轮播图， 轮播图也会自动播放图片。 鼠标经过，轮播图模块， 自动播放停止。二、实现思路1.整体分析 此时需要添加 load 事件。 鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2021-03-13T04:26:30.000Z">
+<meta property="article:modified_time" content="2021-03-13T13:06:52.402Z">
+<meta property="article:author" content="Amoniaa">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">Amoniaa</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>博客首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>我的</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://amoniaa.github.io/">我的博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/Amoniaa">我的github</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Amoniaa</h2> <br />
+                        <span>千帆过尽，归来仍是少年</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Javascript 实现无缝切换/自动播放轮播图</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span id="/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="leancloud_visitors" data-flag-title="Javascript 实现无缝切换/自动播放轮播图">
+                        <i class="fa fa-calendar"></i> 2021-03-13
+                        <i class="fa fa-folder"></i> 分类于 <a class="label-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                        <i class="fa fa-user"></i> 作者 Amoniaa
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~11.06K
+                        
+                        字
+                        
+                            <i class="fa fa-eye"></i> 阅读 <span class="leancloud-visitors-count"></span> 次
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2 id="一、功能需求"><a href="#一、功能需求" class="headerlink" title="一、功能需求"></a>一、功能需求</h2><ol>
+<li>鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮。</li>
+<li>点击右侧按钮一次，图片往左播放一张，以此类推， 左侧按钮同理。</li>
+<li>图片播放的同时，下面小圆圈模块跟随一起变化。</li>
+<li>点击小圆圈，可以播放相应图片。</li>
+<li>鼠标不经过轮播图， 轮播图也会自动播放图片。</li>
+<li>鼠标经过，轮播图模块， 自动播放停止。<h2 id="二、实现思路"><a href="#二、实现思路" class="headerlink" title="二、实现思路"></a>二、实现思路</h2><h3 id="1-整体分析"><a href="#1-整体分析" class="headerlink" title="1.整体分析"></a>1.整体分析</h3></li>
+<li>此时需要添加 load 事件。</li>
+<li>鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮。</li>
+<li>显示隐藏 display 按钮。</li>
+</ol>
+<h3 id="2-动态生成小圆圈"><a href="#2-动态生成小圆圈" class="headerlink" title="2.动态生成小圆圈"></a>2.动态生成小圆圈</h3><ol>
+<li>核心思路:小圆圈的个数要跟图片张数一致</li>
+<li>所以首先先得到ul里面图片的张数(图片放入li里面，所以就是li的个数) </li>
+<li>利用循环动态生成小圆圈(这个小圆圈要放入ol里面)</li>
+<li>创建节点 createElement(‘li’)</li>
+<li>插入节点 ol. appendChild(li)</li>
+<li>第一个小圆圈需要添加 current 类</li>
+</ol>
+<h3 id="3-小圆圈的排他思想"><a href="#3-小圆圈的排他思想" class="headerlink" title="3.小圆圈的排他思想"></a>3.小圆圈的排他思想</h3><ol>
+<li>点击当前小圆圈，就添加current类</li>
+<li>其余的小圆圈就移除这个current类</li>
+<li>注意:我们在刚才生成小圆圈的同时，就可以直接绑定这个点击事件了。</li>
+</ol>
+<h3 id="4-点击小圆圈滚动图片"><a href="#4-点击小圆圈滚动图片" class="headerlink" title="4.点击小圆圈滚动图片"></a>4.点击小圆圈滚动图片</h3><ol>
+<li>此时用到animate动画函数，将js文件引入(注意，因为index.js 依赖 animate.js 所以，animate.js 要写到 index.js 上面) </li>
+<li>使用动画函数的前提，该元素必须有定位</li>
+<li>注意是ul移动而不是小li</li>
+<li>滚动图片的核心算法: 点击某个小圆圈 ， 就让图片滚动 小圆圈的索引号乘以图片的宽度做为ul移动距离</li>
+<li>此时需要知道小圆圈的索引号，我们可以在生成小圆圈的时候，给它设置一个自定义属性，点击的时候获取这个自定 义属性即可。</li>
+</ol>
+<h3 id="5-点击按钮滚动图片"><a href="#5-点击按钮滚动图片" class="headerlink" title="5.点击按钮滚动图片"></a>5.点击按钮滚动图片</h3><ol>
+<li>点击右侧按钮一次，就让图片滚动一张。</li>
+<li>声明一个变量num，点击一次，自增1，让这个变量乘以图片宽度，就是ul的滚动距离。 </li>
+<li>图片无缝滚动原理: 把ul 第一个li 复制一份，放到ul 的最后面</li>
+<li>当图片滚动到克隆的最后一张图片时， 让ul 快速的、不做动画的跳到最左侧: left 为0</li>
+<li>同时num 赋值为0，可以从新开始滚动图片了</li>
+</ol>
+<h3 id="6-克隆第一张图片"><a href="#6-克隆第一张图片" class="headerlink" title="6.克隆第一张图片"></a>6.克隆第一张图片</h3><ol>
+<li>克隆ul 第一个li cloneNode() 加true 深克隆 复制里面的子节点 false 浅克隆 </li>
+<li>添加到 ul 最后面 appendChild</li>
+</ol>
+<h3 id="7-点击右侧按钮，小圆圈跟随变化"><a href="#7-点击右侧按钮，小圆圈跟随变化" class="headerlink" title="7.点击右侧按钮，小圆圈跟随变化"></a>7.点击右侧按钮，小圆圈跟随变化</h3><ol>
+<li>最简单的做法是再声明一个变量circle，每次点击自增</li>
+<li>注意，左侧按钮也需要这个变量，因此要声明全局变量。</li>
+<li>但是图片有5张，我们小圆圈只有4个少一个，必须加一个判断条件，如果circle == 4就从新复原为0</li>
+</ol>
+<h3 id="8-自动播放功能"><a href="#8-自动播放功能" class="headerlink" title="8.自动播放功能"></a>8.自动播放功能</h3><ol>
+<li>添加一个定时器</li>
+<li>自动播放轮播图，实际就类似于点击了右侧按钮</li>
+<li>此时我们使用手动调用右侧按钮点击事件 arrow_r.click() </li>
+<li>鼠标经过focus 就停止定时器</li>
+<li>鼠标离开focus 就开启定时器</li>
+</ol>
+<h3 id="9-节流阀"><a href="#9-节流阀" class="headerlink" title="9.节流阀"></a>9.节流阀</h3><ol>
+<li>防止轮播图按钮连续点击造成播放过快。 </li>
+<li>节流阀目的:当上一个函数动画内容执行完毕，再去执行下一个函数动画，让事件无法连续触发。 </li>
+<li>核心实现思路:利用回调函数，添加一个变量来控制，锁住函数和解锁函数。</li>
+<li>开始设置一个变量 var flag = true;<br>If(flag) {flag = false; do something} 关闭水龙头 利用回调函数 </li>
+<li>动画执行完毕， flag = true 打开水龙头</li>
+</ol>
+<h2 id="三、源程序"><a href="#三、源程序" class="headerlink" title="三、源程序"></a>三、源程序</h2><h3 id="1-index-html"><a href="#1-index-html" class="headerlink" title="1.index.html"></a>1.index.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;base.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;index.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;animate.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;index.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;focus&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 左侧按钮 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;arrow-l&quot;</span>&gt;</span> <span class="symbol">&amp;lt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 右侧按钮 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;arrow-r&quot;</span>&gt;</span> <span class="symbol">&amp;gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 核心的滚动区域 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/1.PNG&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/2.PNG&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/3.PNG&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/4.PNG&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 小圆圈 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">&quot;circle&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-index-css"><a href="#2-index-css" class="headerlink" title="2.index.css"></a>2.index.css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.focus</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">80px</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">960px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">540px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.focus</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">960px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">540px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.focus</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="comment">/* 使用动画需要添加定位 */</span></span><br><span class="line">    <span class="attribute">position</span>: relative; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.focus</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.arrow-l</span>,</span><br><span class="line"><span class="selector-class">.arrow-r</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">3</span>);</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;icomoon&#x27;</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.arrow-l</span> &#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.arrow-r</span> &#123;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circle</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circle</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>, <span class="number">0.5</span>);</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.current</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-base-css"><a href="#3-base-css" class="headerlink" title="3.base.css"></a>3.base.css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除元素默认的内外边距  */</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*让所有斜体 不倾斜*/</span></span><br><span class="line"><span class="selector-tag">em</span>,</span><br><span class="line"><span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*去掉列表前面的小点*/</span></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*图片没有边框   去掉图片底侧的空白缝隙*/</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;  <span class="comment">/*ie6*/</span></span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*让button 按钮 变成小手*/</span></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*取消链接的下划线*/</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#00aeff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">button</span>,</span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;Microsoft YaHei&#x27;</span>, <span class="string">&#x27;Heiti SC&#x27;</span>, tahoma, arial, <span class="string">&#x27;Hiragino Sans GB&#x27;</span>, \\<span class="number">5</span>B8B\<span class="number">4</span>F53, sans-serif;</span><br><span class="line">    <span class="comment">/*取消轮廓线 蓝色的*/</span></span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span> <span class="string">&#x27;Microsoft YaHei&#x27;</span>, <span class="string">&#x27;Heiti SC&#x27;</span>, tahoma, arial, <span class="string">&#x27;Hiragino Sans GB&#x27;</span>, \\<span class="number">5</span>B8B\<span class="number">4</span>F53, sans-serif;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hide</span>,</span><br><span class="line"><span class="selector-class">.none</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*清除浮动*/</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;.&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    *zoom: 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-index-js"><a href="#4-index-js" class="headerlink" title="4.index.js"></a>4.index.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 获取元素</span></span><br><span class="line">    <span class="keyword">var</span> arrow_l = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.arrow-l&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> arrow_r = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.arrow-r&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> focus = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.focus&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> focusWidth = focus.offsetWidth;</span><br><span class="line">    <span class="comment">// 2. 鼠标经过focus 就显示隐藏左右按钮</span></span><br><span class="line">    focus.addEventListener(<span class="string">&#x27;mouseenter&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        arrow_l.style.display = <span class="string">&#x27;block&#x27;</span>;</span><br><span class="line">        arrow_r.style.display = <span class="string">&#x27;block&#x27;</span>;</span><br><span class="line">        <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">        timer = <span class="literal">null</span>; <span class="comment">// 清除定时器变量</span></span><br><span class="line">    &#125;);</span><br><span class="line">    focus.addEventListener(<span class="string">&#x27;mouseleave&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        arrow_l.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">        arrow_r.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">        timer = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//手动调用点击事件</span></span><br><span class="line">            arrow_r.click();</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 3. 动态生成小圆圈  有几张图片，我就生成几个小圆圈</span></span><br><span class="line">    <span class="keyword">var</span> ul = focus.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> ol = focus.querySelector(<span class="string">&#x27;.circle&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ul.children.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 创建一个小li </span></span><br><span class="line">        <span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">        <span class="comment">// 记录当前小圆圈的索引号 通过自定义属性来做 </span></span><br><span class="line">        li.setAttribute(<span class="string">&#x27;index&#x27;</span>, i);</span><br><span class="line">        <span class="comment">// 把小li插入到ol 里面</span></span><br><span class="line">        ol.appendChild(li);</span><br><span class="line">        <span class="comment">// 4. 小圆圈的排他思想 我们可以直接在生成小圆圈的同时直接绑定点击事件</span></span><br><span class="line">        li.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 干掉所有人 把所有的小li 清除 current 类名</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ol.children.length; i++) &#123;</span><br><span class="line">                ol.children[i].className = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 留下我自己  当前的小li 设置current 类名</span></span><br><span class="line">            <span class="built_in">this</span>.className = <span class="string">&#x27;current&#x27;</span>;</span><br><span class="line">            <span class="comment">// 5. 点击小圆圈，移动图片 当然移动的是 ul </span></span><br><span class="line">            <span class="comment">// ul 的移动距离 小圆圈的索引号 乘以 图片的宽度 注意是负值</span></span><br><span class="line">            <span class="comment">// 当我们点击了某个小li 就拿到当前小li 的索引号</span></span><br><span class="line">            <span class="keyword">var</span> index = <span class="built_in">this</span>.getAttribute(<span class="string">&#x27;index&#x27;</span>);</span><br><span class="line">            <span class="comment">// 当我们点击了某个小li 就要把这个li 的索引号给 num  </span></span><br><span class="line">            num = index;</span><br><span class="line">            <span class="comment">// 当我们点击了某个小li 就要把这个li 的索引号给 circle  </span></span><br><span class="line">            circle = index;</span><br><span class="line">            <span class="comment">// num = circle = index;</span></span><br><span class="line">            animate(ul, -index * focusWidth);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 把ol里面的第一个小li设置类名为 current</span></span><br><span class="line">    ol.children[<span class="number">0</span>].className = <span class="string">&#x27;current&#x27;</span>;</span><br><span class="line">    <span class="comment">// 6. 克隆第一张图片(li)放到ul 最后面</span></span><br><span class="line">    <span class="keyword">var</span> first = ul.children[<span class="number">0</span>].cloneNode(<span class="literal">true</span>);</span><br><span class="line">    ul.appendChild(first);</span><br><span class="line">    <span class="comment">// 7. 点击右侧按钮， 图片滚动一张</span></span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// circle 控制小圆圈的播放</span></span><br><span class="line">    <span class="keyword">var</span> circle = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// flag 节流阀</span></span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line">    arrow_r.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>; <span class="comment">// 关闭节流阀</span></span><br><span class="line">            <span class="comment">// 如果走到了最后复制的一张图片，此时 我们的ul 要快速复原 left 改为 0</span></span><br><span class="line">            <span class="keyword">if</span> (num == ul.children.length - <span class="number">1</span>) &#123;</span><br><span class="line">                ul.style.left = <span class="number">0</span>;</span><br><span class="line">                num = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num++;</span><br><span class="line">            animate(ul, -num * focusWidth, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                flag = <span class="literal">true</span>; <span class="comment">// 打开节流阀</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// 8. 点击右侧按钮，小圆圈跟随一起变化 可以再声明一个变量控制小圆圈的播放</span></span><br><span class="line">            circle++;</span><br><span class="line">            <span class="comment">// 如果circle == 4 说明走到最后我们克隆的这张图片了 我们就复原</span></span><br><span class="line">            <span class="keyword">if</span> (circle == ol.children.length) &#123;</span><br><span class="line">                circle = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 调用函数</span></span><br><span class="line">            circleChange();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 9. 左侧按钮做法</span></span><br><span class="line">    arrow_l.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">                num = ul.children.length - <span class="number">1</span>;</span><br><span class="line">                ul.style.left = -num * focusWidth + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num--;</span><br><span class="line">            animate(ul, -num * focusWidth, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// 点击左侧按钮，小圆圈跟随一起变化 可以再声明一个变量控制小圆圈的播放</span></span><br><span class="line">            circle--;</span><br><span class="line">            <span class="comment">// 如果circle &lt; 0  说明第一张图片，则小圆圈要改为第4个小圆圈（3）</span></span><br><span class="line">            <span class="keyword">if</span> (circle &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                circle = ol.children.length - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 调用函数</span></span><br><span class="line">            circleChange();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">circleChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 先清除其余小圆圈的current类名</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ol.children.length; i++) &#123;</span><br><span class="line">            ol.children[i].className = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 留下当前的小圆圈的current类名</span></span><br><span class="line">        ol.children[circle].className = <span class="string">&#x27;current&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 10. 自动播放轮播图</span></span><br><span class="line">    <span class="keyword">var</span> timer = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//手动调用点击事件</span></span><br><span class="line">        arrow_r.click();</span><br><span class="line">    &#125;, <span class="number">3000</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="5-animate-js"><a href="#5-animate-js" class="headerlink" title="5.animate.js"></a>5.animate.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">obj, target, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(callback);  callback = function() &#123;&#125;  调用的时候 callback()</span></span><br><span class="line">    <span class="comment">// 先清除以前的定时器，只保留当前的一个定时器执行</span></span><br><span class="line">    <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">    obj.timer = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 步长值写到定时器的里面</span></span><br><span class="line">        <span class="comment">// 把我们步长值改为整数 不要出现小数的问题</span></span><br><span class="line">        <span class="comment">// var step = Math.ceil((target - obj.offsetLeft) / 10);</span></span><br><span class="line">        <span class="keyword">var</span> step = (target - obj.offsetLeft) / <span class="number">10</span>;</span><br><span class="line">        step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</span><br><span class="line">        <span class="keyword">if</span> (obj.offsetLeft == target) &#123;</span><br><span class="line">            <span class="comment">// 停止动画 本质是停止定时器</span></span><br><span class="line">            <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">            <span class="comment">// 回调函数写到定时器结束里面</span></span><br><span class="line">            <span class="comment">// if (callback) &#123;</span></span><br><span class="line">            <span class="comment">//     // 调用函数</span></span><br><span class="line">            <span class="comment">//     callback();</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            callback &amp;&amp; callback();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 把每次加1 这个步长值改为一个慢慢变小的值  步长公式：(目标值 - 现在的位置) / 10</span></span><br><span class="line">        obj.style.left = obj.offsetLeft + step + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">    &#125;, <span class="number">15</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、最终效果"><a href="#四、最终效果" class="headerlink" title="四、最终效果"></a>四、最终效果</h2><p><img src="https://img-blog.csdnimg.cn/20210313122853258.png"></p>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/";
+            const title         = "「Javascript 实现无缝切换/自动播放轮播图」";
+            const excerpt       = `一、功能需求
+鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮。
+点击右侧按钮一次，图片往左播放一张，以此类推， 左侧按钮同理。
+图片播放的同时，下面小圆圈模块跟随一起变化。
+点击小圆圈，可以播放相应图片。
+鼠标不经过轮播图， 轮播...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Javascript/" rel="tag">Javascript</a>, <a class="tag-none-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-03-13</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" JavaScript BOM 基础" href="/2021/03/12/JavaScript BOM 基础/">&lt; 上一篇</a>
+                </div>
+                
+                
+            </nav>
+        
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'J263hmeplj7v3rhr5KTFquV6-gzGzoHsz',
+                appKey: 'ThINFPG4XRBduN5f6fGE2T8j',
+                visitor: true,
+                enableQQ: false,
+                path: '/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/'
+            });
+        }
+        if (typeof Valine == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+
+    // 因为Valine涉及到访问统计的内容，所以不能使用lazyload，因而在此处就直接加载了
+    window.requestIdleCallback(load_comm);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center">千帆过尽，归来仍是少年</p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+  <aside id="krw-categories" class="widget widget-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%AA%E8%BE%91/">剪辑</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a><span class="category-list-count">2</span></li></ul>
+  </aside>
+
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/CSS/" style="font-size: 0.73em;">CSS</a> <a href="/tags/FCPX/" style="font-size: 0.6em;">FCPX</a> <a href="/tags/HTML/" style="font-size: 0.6em;">HTML</a> <a href="/tags/Javascript/" style="font-size: 0.73em;">Javascript</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.8em;">前端</a> <a href="/tags/%E5%89%AA%E8%BE%91/" style="font-size: 0.67em;">剪辑</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.6em;">操作系统</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 0.6em;">软件工程</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/13/Javascript%20%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2:%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%BD%AE%E6%92%AD%E5%9B%BE/"><i class="fa  fa-book"></i> Javascript 实现无缝切换/自动播放轮播图</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/12/JavaScript%20BOM%20%E5%9F%BA%E7%A1%80/"><i class="fa  fa-book"></i> JavaScript BOM 基础</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/09/JavaScript%20%E9%AB%98%E7%BA%A7%E4%BA%8B%E4%BB%B6/"><i class="fa  fa-book"></i> JavaScript 高级事件</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/09/JavaScript%20DOM%20%E5%9F%BA%E7%A1%80/"><i class="fa  fa-book"></i> JavaScript DOM 基础</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/07/Javascript%20%E5%9F%BA%E7%A1%80/"><i class="fa  fa-book"></i> JavaScript 基础</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/Amoniaa"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 Amoniaa 版权所有.</li>
+                            <li>本站已安全运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://candinya.com" target="_blank" rel="nofollow">Candinya</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://amoniaa.github.io/" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
